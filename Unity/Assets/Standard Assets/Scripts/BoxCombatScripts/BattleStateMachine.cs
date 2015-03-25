@@ -2,18 +2,32 @@
 using System.Collections;
 
 public class BattleStateMachine : MonoBehaviour {
+
+	//public BasePlayer player = new BasePlayer ("Blake");
+	//public EnemyPlayer = new EnemyPlayer("Blake", 10);
+	//Hard Coded to work on something else
 	public int playerhealth = BasePlayer.getHealth();
-	public int enemyhealth = EnemyPlayer.getHealth();
+	public int enemyhealth = 10;
+	//public int enemyhealth = EnemyPlayer.getHealth();
 	public string winning = "";
 	//MAKE THESE PASSED IN FROM PREVIOUS SCENE
 	//public string Attack1 = "Hit";
 	//public string Attack2 = "Stab";
 	//public string Attack3 = "Call for Help";
 	//public string Attack4 = "Rest";
+	/*
 	public Attack attack1 = new Attack("Hit", 2, 5);
 	public Attack attack2 = new Attack("Stab", 5, 3);
 	public Attack attack3 = new Attack("Call for Help", 0, 0);
 	public Attack attack4 = new Attack ("Rest", 0, 0);
+	*/
+
+	Attack attack1 = BasePlayer.getAttack1();
+	Attack attack2 = BasePlayer.getAttack2();
+	Attack attack3 = BasePlayer.getAttack3();
+	Attack attack4 = BasePlayer.getAttack4();
+
+ 
 
 	public enum BattleStates{
 		START,
@@ -31,7 +45,7 @@ public class BattleStateMachine : MonoBehaviour {
 	void Start () {
 		currentState = BattleStates.PLAYERMOVE;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		Debug.Log (currentState);
@@ -121,7 +135,7 @@ public class BattleStateMachine : MonoBehaviour {
 		}
 
 		if (currentState == BattleStates.ENEMYMOVE) {
-			playerhealth -= EnemyPlayer.getAttack1 ();
+			playerhealth -= EnemyPlayer.getEnemyAttack().Damage;
 			if(playerhealth > 0){
 				currentState = BattleStates.PLAYERMOVE;
 			} else {
