@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BattleStateMachine : MonoBehaviour {
+public class BattleStateMachine : MonoBehaviour
+{
 
 	//public BasePlayer player = new BasePlayer ("Blake");
 	//public EnemyPlayer = new EnemyPlayer("Blake", 10);
 	//Hard Coded to work on something else
-	public int playerhealth = BasePlayer.getHealth();
-	public int enemyhealth = 10;
+	public int playerhealth = BasePlayer.getHealth ();
+	public int enemyhealth = EnemyPlayer.getHealth ();
+	public int energy = BasePlayer.getEnergy ();
 	//public int enemyhealth = EnemyPlayer.getHealth();
 	public string winning = "";
+	public string energyStatus = ""; //message will appear that says you're out of energy and cannot attack
 	//MAKE THESE PASSED IN FROM PREVIOUS SCENE
 	//public string Attack1 = "Hit";
 	//public string Attack2 = "Stab";
@@ -22,17 +25,18 @@ public class BattleStateMachine : MonoBehaviour {
 	public Attack attack4 = new Attack ("Rest", 0, 0);
 	*/
 
-	Attack attack1 = BasePlayer.getAttack1();
-	Attack attack2 = BasePlayer.getAttack2();
-	Attack attack3 = BasePlayer.getAttack3();
-	Attack attack4 = BasePlayer.getAttack4();
+	Attack attack1 = BasePlayer.getAttack1 ();
+	Attack attack2 = BasePlayer.getAttack2 ();
+	Attack attack3 = BasePlayer.getAttack3 ();
+	Attack attack4 = BasePlayer.getAttack4 ();
 
  
 
-	public enum BattleStates{
+	public enum BattleStates
+	{
 		START,
 		PLAYERMOVE,
-		TRANSITION,
+		NotEnoughEnergy,
 		ENEMYMOVE,
 		LOSE,
 		WIN
@@ -42,57 +46,65 @@ public class BattleStateMachine : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		currentState = BattleStates.PLAYERMOVE;
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		Debug.Log (currentState);
 		switch (currentState) {
 		case(BattleStates.START):
 			break;
 		case(BattleStates.PLAYERMOVE):
 			break;
-		case(BattleStates.TRANSITION):
-			break;
 		case(BattleStates.ENEMYMOVE):
+			break;
+		case(BattleStates.NotEnoughEnergy):
 			break;
 		case(BattleStates.LOSE):
 			break;
 		case(BattleStates.WIN):
-			GUI.Label (new Rect(20, 80, 200, 20), "YOU WON!");
+			GUI.Label (new Rect (20, 80, 200, 20), "YOU WON!");
 			break;
 		}
 	}
 
-	void OnGUI() {
+	void OnGUI ()
+	{
+
 		//need to work on not fixed postion for the Rectangle
 		GUI.Label (new Rect (20, 20, 100, 20), "Health: " + playerhealth);
 		GUI.Label (new Rect (20, 40, 200, 20), "Enemy Health: " + enemyhealth);
-		GUI.Label (new Rect (20, 60, 100, 20), winning);
+		GUI.Label (new Rect (20, 60, 200, 20), "Energy: " + energy);
+		GUI.Label (new Rect (20, 80, 100, 20), winning);
+		GUI.Label (new Rect (20, 100, 100, 20), energyStatus);
 		GUI.Label (new Rect (275, 360, 100, 20), "Attacks");
+		//if (energy > 0) {
 
-		if (GUI.Button (new Rect (175, 400, 100, 20), attack1.Name)) {
-			if (currentState == BattleStates.PLAYERMOVE){
-				enemyhealth -= attack1.Damage;
-				if(enemyhealth > 0){
-					currentState = BattleStates.ENEMYMOVE;
-				} else {
-					enemyhealth = 0;
-					winning = "You Win!";
-					currentState = BattleStates.WIN;
+		if /*(BasePlayer.canAttack (attack1)==true)*/ (energy >= attack1.EnergyCost) {
+			if (GUI.Button (new Rect (175, 400, 100, 20), attack1.Name)) {
+				if (currentState == BattleStates.PLAYERMOVE) {
+					enemyhealth -= attack1.Damage;
+					energy -= attack1.EnergyCost; 
+					if (enemyhealth > 0) {
+						currentState = BattleStates.ENEMYMOVE;
+					} else {
+						enemyhealth = 0;
+						winning = "You Win!";
+						currentState = BattleStates.WIN;
+					}
 				}
-			}
-		}
 
-
-
-		if (GUI.Button (new Rect (325, 400, 100, 20), attack2.Name)) {
-			if (currentState == BattleStates.PLAYERMOVE){
-				enemyhealth -= attack2.Damage;
+			} 
+		} else if (GUI.Button (new Rect (325, 430, 100, 20), attack4.Name)) {
+			if (currentState == BattleStates.PLAYERMOVE) {
+				enemyhealth -= attack4.Damage;
+				energy += attack4.EnergyCost; //gives player +2 energy 
 				currentState = BattleStates.ENEMYMOVE;
-				if(enemyhealth > 0){
+				if (enemyhealth > 0) {
 					currentState = BattleStates.ENEMYMOVE;
 				} else {
 					enemyhealth = 0;
@@ -104,11 +116,60 @@ public class BattleStateMachine : MonoBehaviour {
 
 
 
-		if (GUI.Button (new Rect (175, 430, 100, 20), attack3.Name)){
-			if (currentState == BattleStates.PLAYERMOVE){
-				enemyhealth -= attack3.Damage;
+
+		if /*(BasePlayer.canAttack (attack2)==true)*/(energy >= attack2.EnergyCost) {
+			if (GUI.Button (new Rect (325, 400, 100, 20), attack2.Name)) {
+				if (currentState == BattleStates.PLAYERMOVE) {
+					enemyhealth -= attack2.Damage;
+					energy -= attack2.EnergyCost; 
+					currentState = BattleStates.ENEMYMOVE;
+					if (enemyhealth > 0) {
+						currentState = BattleStates.ENEMYMOVE;
+					} else {
+						enemyhealth = 0;
+						winning = "You Win!";
+						currentState = BattleStates.WIN;
+					}
+				}
+			} 
+		} else if (GUI.Button (new Rect (325, 430, 100, 20), attack4.Name)) {
+			if (currentState == BattleStates.PLAYERMOVE) {
+				enemyhealth -= attack4.Damage;
+				energy += attack4.EnergyCost; //gives player +2 energy 
 				currentState = BattleStates.ENEMYMOVE;
-				if(enemyhealth > 0){
+				if (enemyhealth > 0) {
+					currentState = BattleStates.ENEMYMOVE;
+				} else {
+					enemyhealth = 0;
+					winning = "You Win!";
+					currentState = BattleStates.WIN;
+				}
+			}
+		} 
+
+
+
+		if /*(BasePlayer.canAttack (attack3)==true)*/(energy >= attack3.EnergyCost) {
+			if (GUI.Button (new Rect (175, 430, 100, 20), attack3.Name)){
+				if (currentState == BattleStates.PLAYERMOVE) {
+					enemyhealth -= attack3.Damage;
+					energy -= attack3.EnergyCost;
+					currentState = BattleStates.ENEMYMOVE;
+					if (enemyhealth > 0) {
+						currentState = BattleStates.ENEMYMOVE;
+					} else {
+						enemyhealth = 0;
+						winning = "You Win!";
+						currentState = BattleStates.WIN;
+					}
+				}
+			} 
+		} else if (GUI.Button (new Rect (325, 430, 100, 20), attack4.Name)) {
+			if (currentState == BattleStates.PLAYERMOVE) {
+				enemyhealth -= attack4.Damage;
+				energy += attack4.EnergyCost; //gives player +2 energy 
+				currentState = BattleStates.ENEMYMOVE;
+				if (enemyhealth > 0) {
 					currentState = BattleStates.ENEMYMOVE;
 				} else {
 					enemyhealth = 0;
@@ -117,14 +178,17 @@ public class BattleStateMachine : MonoBehaviour {
 				}
 			}
 		}
+
+
 
 
 
 		if (GUI.Button (new Rect (325, 430, 100, 20), attack4.Name)) {
-			if (currentState == BattleStates.PLAYERMOVE){
+			if (currentState == BattleStates.PLAYERMOVE) {
 				enemyhealth -= attack4.Damage;
+				energy += attack4.EnergyCost; //gives player +2 energy 
 				currentState = BattleStates.ENEMYMOVE;
-				if(enemyhealth > 0){
+				if (enemyhealth > 0) {
 					currentState = BattleStates.ENEMYMOVE;
 				} else {
 					enemyhealth = 0;
@@ -135,8 +199,8 @@ public class BattleStateMachine : MonoBehaviour {
 		}
 
 		if (currentState == BattleStates.ENEMYMOVE) {
-			playerhealth -= EnemyPlayer.getEnemyAttack().Damage;
-			if(playerhealth > 0){
+			playerhealth -= EnemyPlayer.getEnemyAttack ().Damage;
+			if (playerhealth > 0) {
 				currentState = BattleStates.PLAYERMOVE;
 			} else {
 				playerhealth = 0;
@@ -146,53 +210,26 @@ public class BattleStateMachine : MonoBehaviour {
 			
 			
 		}
-
-		/*if (GUILayout.Button ("Attack")) {
-			if (currentState == BattleStates.START) {
-				//Stays in PLAYERMOVE to pick a move
-				currentState = BattleStates.PLAYERMOVE;
-			} else if (currentState == BattleStates.PLAYERMOVE) {
-				enemyhealth = enemyhealth - BasePlayer.getAttack1();
-
-				if (enemyhealth <= 0) {
-					winning = "You win";
-					currentState = BattleStates.WIN;
-				} else {
-					currentState = BattleStates.ENEMYMOVE;
-				}
-			} else if (currentState == BattleStates.ENEMYMOVE) {
-				playerhealth = playerhealth - EnemyPlayer.getAttack1();
-
-				if (playerhealth <= 0) {
-					winning = "You Lose!";
-					currentState = BattleStates.LOSE;
-
-				} else {
-					currentState = BattleStates.PLAYERMOVE;
-				}
-			} else if (currentState == BattleStates.WIN) {
-				//Add code for ending scene
-			} else if(currentState == BattleStates.LOSE) {
-				//Add code for ending scene
-			}
-
-		}*/
-
+			
 
 
 	}
+
 }
 
-public class Attack {
+public class Attack
+{
 	public string Name;
 	public int Damage;
 	public int Speed;
+	public int EnergyCost;
 
-	public Attack(string name1, int damage1, int speed1){
+	public Attack (string name1, int damage1, int speed1, int cost)
+	{
 		Name = name1;
 		Damage = damage1;
 		Speed = speed1;
-
+		EnergyCost = cost;
 	}
 
 }
