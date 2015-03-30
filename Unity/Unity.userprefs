@@ -1,12 +1,18 @@
 ﻿<Properties>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\BoxCombatScripts\BattleStateMachine.cs">
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\OpeningScene Scripts\MenuManager.cs">
+>>>>>>> origin/master
     <Files>
-      <File FileName="Assets\Standard Assets\Scripts\BoxCombatScripts\BasePlayer.cs" Line="21" Column="2" />
+      <File FileName="Assets\Standard Assets\Scripts\BoxCombatScripts\BasePlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\BoxCombatScripts\BattleStateMachine.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\BoxCombatScripts\EnemyPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\BoxCombatScripts\GameInformation.cs" Line="1" Column="1" />
+<<<<<<< HEAD
 =======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Scripts/BoxCombatScripts/BasePlayer.cs">
@@ -14,6 +20,9 @@
       <File FileName="Assets/Standard Assets/Scripts/BoxCombatScripts/BattleStateMachine.cs" Line="1" Column="1" />
       <File FileName="Assets/Standard Assets/Scripts/BoxCombatScripts/BasePlayer.cs" Line="23" Column="17" />
 >>>>>>> Stashed changes
+=======
+      <File FileName="Assets\Standard Assets\Scripts\OpeningScene Scripts\MenuManager.cs" Line="17" Column="19" />
+>>>>>>> origin/master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
