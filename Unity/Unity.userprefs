@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< Updated upstream
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\BoxCombatScripts\BattleStateMachine.cs">
     <Files>
@@ -6,6 +7,13 @@
       <File FileName="Assets\Standard Assets\Scripts\BoxCombatScripts\BattleStateMachine.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\BoxCombatScripts\EnemyPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\BoxCombatScripts\GameInformation.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Scripts/BoxCombatScripts/BasePlayer.cs">
+    <Files>
+      <File FileName="Assets/Standard Assets/Scripts/BoxCombatScripts/BattleStateMachine.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/BoxCombatScripts/BasePlayer.cs" Line="23" Column="17" />
+>>>>>>> Stashed changes
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
