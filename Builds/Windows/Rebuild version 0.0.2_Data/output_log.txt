@@ -1,0 +1,33 @@
+Initialize engine version: 5.0.0f4 (5b98b70ebeb9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.164 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\TJ\Documents\GitHub\OpenWorldRPG\Builds\Build 0.0.1\Windows\Rebuild version 0.0.2_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 229c -> priority: 1 
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.289778 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 218.
+Total: 0.225790 ms (FindLiveObjects: 0.015696 ms CreateObjectMapping: 0.019922 ms MarkObjects: 0.180511 ms  DeleteObjects: 0.009055 ms)
+
