@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ResourceManager.cs">
     <Files>
-      <File FileName="Assets\ResourceManager.cs" Line="68" Column="9" />
+      <File FileName="Assets\ResourceManager.cs" Line="39" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
