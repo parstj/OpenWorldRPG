@@ -38,6 +38,7 @@ public class ResourceManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		modifyFood (1);
 	}
 
 	#region updateDisplays

@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ResourceManager.cs" />
+     <Compile Include="Assets\Scripts\BoxCombatScripts\BasePlayer.cs" />
+     <Compile Include="Assets\Scripts\BoxCombatScripts\BattleStateMachine.cs" />
+     <Compile Include="Assets\Scripts\BoxCombatScripts\EnemyPlayer.cs" />
+     <Compile Include="Assets\Scripts\BoxCombatScripts\GameInformation.cs" />
+     <Compile Include="Assets\Scripts\General Scripts\ActivateTrigger.cs" />
+     <Compile Include="Assets\Scripts\OpeningScene Scripts\MenuManager.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
