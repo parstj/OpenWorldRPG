@@ -1,9 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\OpeningScene Scripts\MenuManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/OpeningScene Scripts/MenuManager.cs">
     <Files>
-      <File FileName="Assets\ResourceManager.cs" Line="39" Column="9" />
-      <File FileName="Assets\Scripts\OpeningScene Scripts\MenuManager.cs" Line="26" Column="1" />
+      <File FileName="Assets/Scripts/OpeningScene Scripts/MenuManager.cs" Line="20" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
