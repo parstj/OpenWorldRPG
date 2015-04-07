@@ -65,9 +65,11 @@ public class BattleStateMachine : MonoBehaviour
 		case(BattleStates.NotEnoughEnergy):
 			break;
 		case(BattleStates.LOSE):
+			goBackToOpenWorld();
 			break;
 		case(BattleStates.WIN):
 			GUI.Label (new Rect (20, 80, 200, 20), "YOU WON!");
+			goBackToOpenWorld();
 			break;
 		}
 	}
@@ -215,7 +217,33 @@ public class BattleStateMachine : MonoBehaviour
 
 	}
 
+	//this function is added to make a playable game
+	//to be replaced
+	//by Yu Zhan
+	void TestFunc (){
+		Debug.Log("Test");
+	}
+
+	private void goBackToOpenWorld (){
+		//yield return new WaitForSeconds(5);
+		Invoke("TestFunc", 5f);
+		if(winning == "You Win!"){
+			Debug.Log("win here");
+			if (Application.CanStreamedLevelBeLoaded ("test1")) {
+				Application.LoadLevel ("test1");
+			}
+		}
+		else if(winning == "You Lose!"){
+			Debug.Log("lose here");
+			if (Application.CanStreamedLevelBeLoaded ("Opening Scene")) {
+				Application.LoadLevel ("Opening Scene");
+			}
+		}
+	}
+
 }
+
+
 
 public class Attack
 {
