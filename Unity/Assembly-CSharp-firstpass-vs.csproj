@@ -47,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
-     <Compile Include="Assets\Standard Assets\Scripts\BoxCombatScripts\BasePlayer.cs" />
-     <Compile Include="Assets\Standard Assets\Scripts\BoxCombatScripts\BattleStateMachine.cs" />
-     <Compile Include="Assets\Standard Assets\Scripts\BoxCombatScripts\EnemyPlayer.cs" />
-     <Compile Include="Assets\Standard Assets\Scripts\BoxCombatScripts\GameInformation.cs" />
-     <Compile Include="Assets\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
-     <Compile Include="Assets\Standard Assets\Scripts\OpeningScene Scripts\MenuManager.cs" />
      <Compile Include="Assets\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
