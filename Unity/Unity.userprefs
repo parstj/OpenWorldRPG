@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\OpeningScene Scripts\MenuManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Village Management Scripts\BuildingManager.cs">
     <Files>
-      <File FileName="Assets\ResourceManager.cs" Line="39" Column="9" />
-      <File FileName="Assets\Scripts\OpeningScene Scripts\MenuManager.cs" Line="26" Column="1" />
+      <File FileName="Assets\Scripts\Village Management Scripts\BuildingManager.cs" Line="8" Column="22" />
+      <File FileName="Assets\Scripts\Village Management Scripts\GameManager.cs" Line="13" Column="32" />
+      <File FileName="Assets\Scripts\Village Management Scripts\ResourceManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Village Management Scripts\Buildings\Well.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Village Management Scripts\Buildings\Building.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
