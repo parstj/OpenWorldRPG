@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\Well.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\ResourceManager.cs" />
+     <Compile Include="Assets\Scripts\Village Management Scripts\TogglePanelButton.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
