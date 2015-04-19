@@ -10,6 +10,7 @@ public abstract class Building {
 
 	public Building(int buildingType){
 		this.buildingType = buildingType;
+		this.Level = 1;
 	}
 
 	protected enum Resources { gold, food, water, wood, stone, currPop, maxPop };
