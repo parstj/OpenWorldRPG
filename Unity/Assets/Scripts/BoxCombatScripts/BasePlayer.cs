@@ -75,17 +75,11 @@ public class BasePlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-<<<<<<< HEAD
 		health = GameControl.control.playerData.curHealth;
 		energy = GameControl.control.playerData.curEnergy;
-=======
-		health = GameControl.control.curHealth;
-		energy = GameControl.control.curEnergy;
-		experience = GameControl.control.curExperience;
-		level = GameControl.control.level;
-		damageMultiplier = GameControl.control.curDamageMultiplier;
-
->>>>>>> 4b360f9cd80b52bcce9172a625e659607a99d683
+		experience = GameControl.control.playerData.curExperience;
+		level = GameControl.control.playerData.level;
+		damageMultiplier = GameControl.control.playerData.curDamageMultiplier;
 //		Debug.Log (GameControl.control.health);
 	}
 	
