@@ -10,6 +10,9 @@ public class BasePlayer : MonoBehaviour {
 	private static Attack attack2 = new Attack("Stab", 5, 3, 3);
 	private static Attack attack3 = new Attack("Call for Help", 0, 0, 1);
 	private static Attack attack4 = new Attack ("Rest", 0, 0, 2);
+	public int level; 
+	public int experience;
+	private int damageMultiplier;
 	
 	public BasePlayer (string Name){
 		this.PlayerName = Name;
@@ -74,6 +77,10 @@ public class BasePlayer : MonoBehaviour {
 	void Start () {
 		health = GameControl.control.curHealth;
 		energy = GameControl.control.curEnergy;
+		experience = GameControl.control.curExperience;
+		level = GameControl.control.level;
+		damageMultiplier = GameControl.control.curDamageMultiplier;
+
 //		Debug.Log (GameControl.control.health);
 	}
 	
