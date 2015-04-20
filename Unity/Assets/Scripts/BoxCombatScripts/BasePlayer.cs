@@ -5,7 +5,7 @@ public class BasePlayer : MonoBehaviour {
 	public string PlayerName;
 
 	private static int health;
-	private static int energy = 10;
+	private static int energy;
 	private static Attack attack1 = new Attack("Hit", 2, 5, 2); 
 	private static Attack attack2 = new Attack("Stab", 5, 3, 3);
 	private static Attack attack3 = new Attack("Call for Help", 0, 0, 1);
@@ -72,8 +72,9 @@ public class BasePlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		health = GameControl.control.health;
-		Debug.Log (GameControl.control.health);
+		health = GameControl.control.curHealth;
+		energy = GameControl.control.curEnergy;
+//		Debug.Log (GameControl.control.health);
 	}
 	
 	// Update is called once per frame

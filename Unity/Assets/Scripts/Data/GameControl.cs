@@ -5,8 +5,11 @@ public class GameControl : MonoBehaviour {
 
 	public static GameControl control;
 
-	public int health;
-	public int experience;
+	public int level;
+	public int curHealth;
+	public int curEnergy;
+	public int curExperience;
+	public int curDamageMultiplier;
 	
 	void Awake () {
 		if (control == null) {
