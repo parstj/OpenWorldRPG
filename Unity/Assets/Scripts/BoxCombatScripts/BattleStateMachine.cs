@@ -4,26 +4,12 @@ using System.Collections;
 public class BattleStateMachine : MonoBehaviour
 {
 
-	//public BasePlayer player = new BasePlayer ("Blake");
-	//public EnemyPlayer = new EnemyPlayer("Blake", 10);
-	//Hard Coded to work on something else
-	public int playerhealth;
+	public int playerhealth = BasePlayer.getHealth();
 	public int enemyhealth;
 	public int energy;
-	//public int enemyhealth = EnemyPlayer.getHealth();
 	public string winning = "";
 	public string energyStatus = ""; //message will appear that says you're out of energy and cannot attack
-	//MAKE THESE PASSED IN FROM PREVIOUS SCENE
-	//public string Attack1 = "Hit";
-	//public string Attack2 = "Stab";
-	//public string Attack3 = "Call for Help";
-	//public string Attack4 = "Rest";
-	/*
-	public Attack attack1 = new Attack("Hit", 2, 5);
-	public Attack attack2 = new Attack("Stab", 5, 3);
-	public Attack attack3 = new Attack("Call for Help", 0, 0);
-	public Attack attack4 = new Attack ("Rest", 0, 0);
-	*/
+
 
 	Attack attack1 = BasePlayer.getAttack1 ();
 	Attack attack2 = BasePlayer.getAttack2 ();
@@ -90,7 +76,7 @@ public class BattleStateMachine : MonoBehaviour
 		GUI.Label (new Rect (275, 360, 100, 20), "Attacks");
 		//if (energy > 0) {
 
-		if /*(BasePlayer.canAttack (attack1)==true)*/ (energy >= attack1.EnergyCost) {
+		if (energy >= attack1.EnergyCost) {
 			if (GUI.Button (new Rect (175, 400, 100, 20), attack1.Name)) {
 				if (currentState == BattleStates.PLAYERMOVE) {
 					enemyhealth -= attack1.Damage;
@@ -245,6 +231,8 @@ public class BattleStateMachine : MonoBehaviour
 		}
 	}
 
+
+
 }
 
 
@@ -265,3 +253,35 @@ public class Attack
 	}
 
 }
+/*
+public class Enemy{
+	public string Name;
+	public int Level;
+	public enum type {
+		FAST,
+		SLOW,
+		LAZY
+	} 
+	public type TypeOfPlayer;
+	public enum difficulty {
+		EASY,
+		MEDIUM,
+		HARD
+	} 
+	public difficulty DifficultyOfPlayer;
+
+	public Enemy (string name, int level, type type1, difficulty difficulty1){
+		Name = name;
+		Level = level;
+		TypeOfPlayer = type1;
+		DifficultyOfPlayer = difficulty1;
+	}
+	
+
+	public Attack attack1 = new Attack("Hit", 2, 5, 2);
+	public Attack attack2 = new Attack("Stab", 5, 3, 3);
+	public Attack attack3 = new Attack("Scratch", 1, 0, 1);
+	public Attack attack4 = new Attack ("Rest", 0, 0, 0);
+
+
+}*/
