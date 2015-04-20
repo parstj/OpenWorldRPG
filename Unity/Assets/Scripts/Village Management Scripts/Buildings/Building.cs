@@ -8,15 +8,13 @@ public abstract class Building {
 		set;
 	}
 
+	public string Name { get; set; }
+	public int Level { get; set; }
+
 	public Building(int buildingType){
 		this.buildingType = buildingType;
 		this.Level = 1;
 	}
-
-	protected enum Resources { gold, food, water, wood, stone, currPop, maxPop };
-	
-	public string Name { get; set; }
-	public int Level { get; set; }
 	
 	public abstract void applyBuildingEffects(ResourceManager resourceManager);
 
