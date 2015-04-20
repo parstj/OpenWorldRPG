@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyPlayer {
+public class EnemyPlayer : MonoBehaviour {
 
 	public string EnemyName;
 	private static int health = 10;

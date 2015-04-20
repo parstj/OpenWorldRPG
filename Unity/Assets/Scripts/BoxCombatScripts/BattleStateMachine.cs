@@ -7,9 +7,9 @@ public class BattleStateMachine : MonoBehaviour
 	//public BasePlayer player = new BasePlayer ("Blake");
 	//public EnemyPlayer = new EnemyPlayer("Blake", 10);
 	//Hard Coded to work on something else
-	public int playerhealth = BasePlayer.getHealth ();
-	public int enemyhealth = EnemyPlayer.getHealth ();
-	public int energy = BasePlayer.getEnergy ();
+	public int playerhealth;
+	public int enemyhealth;
+	public int energy;
 	//public int enemyhealth = EnemyPlayer.getHealth();
 	public string winning = "";
 	public string energyStatus = ""; //message will appear that says you're out of energy and cannot attack
@@ -49,12 +49,16 @@ public class BattleStateMachine : MonoBehaviour
 	void Start ()
 	{
 		currentState = BattleStates.PLAYERMOVE;
+
+		playerhealth = BasePlayer.getHealth ();
+		enemyhealth = EnemyPlayer.getHealth ();
+		energy = BasePlayer.getEnergy ();
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
-		Debug.Log (currentState);
+		//Debug.Log (currentState);
 		switch (currentState) {
 		case(BattleStates.START):
 			break;

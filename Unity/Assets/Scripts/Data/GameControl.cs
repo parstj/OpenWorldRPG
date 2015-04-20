@@ -5,8 +5,8 @@ public class GameControl : MonoBehaviour {
 
 	public static GameControl control;
 
-	public float health;
-	public float experience;
+	public int health;
+	public int experience;
 	
 	void Awake () {
 		if (control == null) {
@@ -17,8 +17,8 @@ public class GameControl : MonoBehaviour {
 		}
 	}
 	
-	void OnGUI(){
-		GUI.Label (new Rect(10, 10, 150, 30), "Health: " + health);
-		GUI.Label (new Rect(10, 40, 150, 30), "Experience: " + experience);
-	}
+//	void OnGUI(){
+//		GUI.Label (new Rect(10, 10, 150, 30), "Health: " + health);
+//		GUI.Label (new Rect(10, 40, 150, 30), "Experience: " + experience);
+//	}
 }
