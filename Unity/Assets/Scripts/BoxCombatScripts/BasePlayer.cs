@@ -72,8 +72,8 @@ public class BasePlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		health = GameControl.control.curHealth;
-		energy = GameControl.control.curEnergy;
+		health = GameControl.control.playerData.curHealth;
+		energy = GameControl.control.playerData.curEnergy;
 //		Debug.Log (GameControl.control.health);
 	}
 	
