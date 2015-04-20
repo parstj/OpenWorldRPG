@@ -18,11 +18,8 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	public void newGameButtonClick(){
-//		if(Application.CanStreamedLevelBeLoaded("Village Management")){
-//			Application.LoadLevel ("Village Management");
-//		}
-		if(Application.CanStreamedLevelBeLoaded("test1")){
-			Application.LoadLevel ("test1");
+		if(Application.CanStreamedLevelBeLoaded("Village Management")){
+			Application.LoadLevel ("Village Management");
 		}
 	}
 }

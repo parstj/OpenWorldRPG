@@ -1,8 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BoxCombatScripts/BattleStateMachine.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Village Management Scripts/ResourceManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/BoxCombatScripts/BattleStateMachine.cs" Line="233" Column="34" />
+      <File FileName="Assets/Scripts/Data/AdjustScript.cs" Line="6" Column="1" />
+      <File FileName="Assets/Scripts/Data/GameControl.cs" Line="6" Column="36" />
+      <File FileName="Assets/Scripts/BoxCombatScripts/BasePlayer.cs" Line="7" Column="33" />
+      <File FileName="Assets/Scripts/EscapeButton.cs" Line="10" Column="43" />
+      <File FileName="Assets/Scripts/Village Management Scripts/ResourceManager.cs" Line="5" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
