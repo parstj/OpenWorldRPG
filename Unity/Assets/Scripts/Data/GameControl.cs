@@ -12,6 +12,8 @@ public class GameControl : MonoBehaviour {
 	public OpenWorldData openWorldData = new OpenWorldData();
 
 	void Awake () {
+		//Debug.Log (Application.loadedLevel);
+
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
 			control = this;
@@ -21,6 +23,10 @@ public class GameControl : MonoBehaviour {
 	}
 
 	public void Save(){
+		//Debug.Log (Application.loadedLevel);
+		if(Application.loadedLevel == 2){
+			OpenWorldController.mySave (0);
+		}
 		BinaryFormatter bf = new BinaryFormatter ();
 
 		FileStream file = File.Create (Application.persistentDataPath + "/playerInfo.dat");
