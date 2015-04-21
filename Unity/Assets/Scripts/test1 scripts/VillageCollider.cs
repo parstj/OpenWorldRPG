@@ -11,6 +11,7 @@ public class VillageCollider: MonoBehaviour {
 				Application.LoadLevel ("Village Management");
 			}
 		} else if (other.gameObject.tag == "EnemyTag") {
+			Debug.Log (other.name);
 			OpenWorldController.mySave(1);
 
 			Debug.Log("HERE");
