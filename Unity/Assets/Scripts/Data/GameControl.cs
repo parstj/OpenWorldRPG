@@ -10,6 +10,7 @@ public class GameControl : MonoBehaviour {
 	
 	public PlayerData playerData = new PlayerData ();
 	public OpenWorldData openWorldData = new OpenWorldData();
+	public VillageData villageData = new VillageData();
 
 	void Awake () {
 		//Debug.Log (Application.loadedLevel);
@@ -67,6 +68,8 @@ public class GameControl : MonoBehaviour {
 		openWorldData.enemy1.posY = 2.19F;
 		openWorldData.enemy1.posZ = 20.0F;
 
+		villageData.turn = 1;
+
 		Save ();
 	}
 	
@@ -84,6 +87,8 @@ public class GameControl : MonoBehaviour {
 		GUI.Label (new Rect(200, 190, 150, 30), "EnemyPosX: " + openWorldData.enemy1.posX);
 		GUI.Label (new Rect(200, 210, 150, 30), "EnemyPosY: " + openWorldData.enemy1.posY);
 		GUI.Label (new Rect(200, 230, 150, 30), "EnemyPosZ: " + openWorldData.enemy1.posZ);
+
+		GUI.Label (new Rect (200, 250, 150, 30), "Turn: " + villageData.turn);
 	}
 }
 
@@ -95,7 +100,6 @@ public class PlayerData{
 	public int curExperience;
 	public int curDamageMultiplier;
 }
-
 [Serializable]
 public class OpenWorldData{
 	public float playerPosX;
@@ -109,4 +113,8 @@ public class EnemyData{
 	public float posX;
 	public float posY;
 	public float posZ;
+}
+[Serializable]
+public class VillageData{
+	public int turn;
 }
