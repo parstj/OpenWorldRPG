@@ -9,8 +9,7 @@ public class EnemyAI : MonoBehaviour {
 	public float chaseWaitTime = 5f;
 	public float patrolWaitTime = 1f;
 	public Transform[] patrolWayPoints;
-
-	private EnemySight enemySight;
+	
 	private NavMeshAgent nav;
 	private Transform player;
 
@@ -19,13 +18,12 @@ public class EnemyAI : MonoBehaviour {
 	private float wayPointIndex;
 
 	void Awake(){
-		enemySight = GetComponent<EnemySight> ();
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		nav = GetComponent <NavMeshAgent> ();
 	}
 
 	void Update(){
-		if (enemySight.playerInSight) {
+		if(GameControl.control.openWorldData.enemy1.isPlayerInSight){
 			Chasing ();
 		} else {
 			Patrolling();
@@ -37,6 +35,6 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	void Patrolling(){
-	
+		//nav.SetDestination (player.position);
 	}
 }

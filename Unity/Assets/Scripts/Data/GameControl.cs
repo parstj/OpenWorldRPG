@@ -13,8 +13,6 @@ public class GameControl : MonoBehaviour {
 	public VillageData villageData = new VillageData();
 
 	void Awake () {
-		//Debug.Log (Application.loadedLevel);
-
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
 			control = this;
@@ -24,7 +22,6 @@ public class GameControl : MonoBehaviour {
 	}
 
 	public void Save(){
-		//Debug.Log (Application.loadedLevel);
 		if(Application.loadedLevel == 2){
 			OpenWorldController.mySave (0);
 		}
@@ -36,6 +33,10 @@ public class GameControl : MonoBehaviour {
 
 		file = File.Create (Application.persistentDataPath + "/openWorldInfo.dat");
 		bf.Serialize (file, openWorldData);
+		file.Close ();
+
+		file = File.Create (Application.persistentDataPath + "/villageInfo.dat");
+		bf.Serialize (file, villageData);
 		file.Close ();
 	}
 
@@ -49,6 +50,10 @@ public class GameControl : MonoBehaviour {
 
 			file = File.Open (Application.persistentDataPath + "/openWorldInfo.dat", FileMode.Open);
 			openWorldData = (OpenWorldData)bf.Deserialize(file);
+			file.Close();
+
+			file = File.Open (Application.persistentDataPath + "/villageInfo.dat", FileMode.Open);
+			villageData = (VillageData)bf.Deserialize(file);
 			file.Close();
 		}
 	}
@@ -64,6 +69,7 @@ public class GameControl : MonoBehaviour {
 		openWorldData.playerPosY = 1.0F;
 		openWorldData.playerPosZ = 2.0F;
 		openWorldData.enemy1.isDead = 0;
+		openWorldData.enemy1.isPlayerInSight = false;
 		openWorldData.enemy1.posX = 20.0F;
 		openWorldData.enemy1.posY = 2.19F;
 		openWorldData.enemy1.posZ = 20.0F;
@@ -89,6 +95,7 @@ public class GameControl : MonoBehaviour {
 		GUI.Label (new Rect(200, 230, 150, 30), "EnemyPosZ: " + openWorldData.enemy1.posZ);
 
 		GUI.Label (new Rect (200, 250, 150, 30), "Turn: " + villageData.turn);
+		GUI.Label (new Rect(200, 270, 150, 30), "EnemyisPlayerInSight: " + openWorldData.enemy1.isPlayerInSight);
 	}
 }
 
@@ -110,6 +117,7 @@ public class OpenWorldData{
 [Serializable]
 public class EnemyData{
 	public int isDead;
+	public bool isPlayerInSight;
 	public float posX;
 	public float posY;
 	public float posZ;

@@ -12,14 +12,19 @@ public class OpenWorldController : MonoBehaviour {
 	}
 	
 	void myLoad(){
+		//initializing
 		player = GameObject.Find ("Player");
-		enemy1 = GameObject.Find ("Enemy1");
+		enemy1 = GameObject.Find ("Enemy1Body");
 
+
+		//player load
 		Vector3 playerPos = new Vector3(GameControl.control.openWorldData.playerPosX,
 		                                GameControl.control.openWorldData.playerPosY,
 		                                GameControl.control.openWorldData.playerPosZ);
 		player.transform.position = playerPos;
+		
 
+		//enemy load
 		if (GameControl.control.openWorldData.enemy1.isDead == 0) {
 			Vector3 enemyPos = new Vector3 (GameControl.control.openWorldData.enemy1.posX,
 			                               GameControl.control.openWorldData.enemy1.posY,
@@ -31,13 +36,18 @@ public class OpenWorldController : MonoBehaviour {
 	}
 
 	public static void mySave(int enemyIsKilled){
+		//initializing
 		GameObject player = GameObject.Find ("Player");
-		GameObject enemy1 = GameObject.Find ("Enemy1");
+		GameObject enemy1 = GameObject.Find ("Enemy1Body");
 
+
+		//player save
 		GameControl.control.openWorldData.playerPosX = player.transform.position.x;
 		GameControl.control.openWorldData.playerPosY = player.transform.position.y;
 		GameControl.control.openWorldData.playerPosZ = player.transform.position.z;
 
+
+		//enemy save
 		if(enemyIsKilled == 1)// 1 means it is killed, 0 means not changed
 			GameControl.control.openWorldData.enemy1.isDead = 1;
 		if (GameControl.control.openWorldData.enemy1.isDead == 0) {//enemy is still alive
