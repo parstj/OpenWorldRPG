@@ -14,7 +14,7 @@ public class OpenWorldController : MonoBehaviour {
 	void myLoad(){
 		//initializing
 		player = GameObject.Find ("Player");
-		enemy1 = GameObject.Find ("Enemy1Body");
+		enemy1 = GameObject.Find ("EnemyBody_001");
 
 
 		//player load
@@ -38,7 +38,7 @@ public class OpenWorldController : MonoBehaviour {
 	public static void mySave(int enemyIsKilled){
 		//initializing
 		GameObject player = GameObject.Find ("Player");
-		GameObject enemy1 = GameObject.Find ("Enemy1Body");
+		GameObject enemy1 = GameObject.Find ("EnemyBody_001");
 
 
 		//player save

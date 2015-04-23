@@ -6,16 +6,14 @@ public class EnemyAI : MonoBehaviour {
 	//patroling & chasing
 	public float patrolSpeed = 2f;
 	public float chaseSpeed = 5f;
-	public float chaseWaitTime = 5f;
 	public float patrolWaitTime = 1f;
 	public Transform[] patrolWayPoints;
 	
 	private NavMeshAgent nav;
 	private Transform player;
 
-	private float chaseTimer;
 	private float patrolTimer;
-	private float wayPointIndex;
+	private int wayPointIndex;
 
 	void Awake(){
 		player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -31,10 +29,30 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	void Chasing(){
+		nav.speed = chaseSpeed;
 		nav.SetDestination (player.position);
 	}
 
 	void Patrolling(){
-		//nav.SetDestination (player.position);
+		nav.speed = patrolSpeed;
+
+		if(nav.remainingDistance < nav.stoppingDistance){
+			patrolTimer += Time.deltaTime;
+
+			if(patrolTimer >= patrolWaitTime){
+				if(wayPointIndex == patrolWayPoints.Length-1){
+					wayPointIndex = 0;
+				}
+				else{
+					wayPointIndex++;
+				}
+
+				patrolTimer = 0f;
+			}
+		}
+		else
+			patrolTimer = 0f;
+
+		nav.SetDestination(patrolWayPoints[wayPointIndex].position);
 	}
 }
