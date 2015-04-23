@@ -23,7 +23,7 @@ public class GameControl : MonoBehaviour {
 
 	public void Save(){
 		if(Application.loadedLevel == 2){
-			OpenWorldController.mySave (0);
+			OpenWorldController.mySave (0, 0);
 		}
 		BinaryFormatter bf = new BinaryFormatter ();
 

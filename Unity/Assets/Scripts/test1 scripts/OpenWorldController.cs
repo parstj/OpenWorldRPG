@@ -35,16 +35,23 @@ public class OpenWorldController : MonoBehaviour {
 		}
 	}
 
-	public static void mySave(int enemyIsKilled){
+	public static void mySave(int enemyIsKilled, int villageIndex){
 		//initializing
 		GameObject player = GameObject.Find ("Player");
 		GameObject enemy1 = GameObject.Find ("EnemyBody_001");
 
 
 		//player save
-		GameControl.control.openWorldData.playerPosX = player.transform.position.x;
-		GameControl.control.openWorldData.playerPosY = player.transform.position.y;
-		GameControl.control.openWorldData.playerPosZ = player.transform.position.z;
+		if (villageIndex == 0) {
+			GameControl.control.openWorldData.playerPosX = player.transform.position.x;
+			GameControl.control.openWorldData.playerPosY = player.transform.position.y;
+			GameControl.control.openWorldData.playerPosZ = player.transform.position.z;
+		} else {
+			Vector3 exit = GameObject.Find ("VillageExit_001").transform.position;
+			GameControl.control.openWorldData.playerPosX = exit.x;
+			GameControl.control.openWorldData.playerPosY = exit.y;
+			GameControl.control.openWorldData.playerPosZ = exit.z;
+		}
 
 
 		//enemy save
