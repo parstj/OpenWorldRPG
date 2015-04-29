@@ -15,6 +15,10 @@ public abstract class Building {
 		this.buildingType = buildingType;
 		this.Level = 1;
 	}
+
+	public void levelUp(){
+		this.Level++;
+	}
 	
 	public abstract void applyBuildingEffects(ResourceManager resourceManager);
 

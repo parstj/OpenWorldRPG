@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour {
 
 	#region endTurn
 	public void EndTurn(){
-		buildingManager.buildWell();
 		buildingsEndTurn ();
 		Turns++;
 	}
