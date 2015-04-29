@@ -11,6 +11,7 @@ public class GameControl : MonoBehaviour {
 	public PlayerData playerData = new PlayerData ();
 	public OpenWorldData openWorldData = new OpenWorldData();
 	public VillageData villageData = new VillageData();
+	public MissionData missionData = new MissionData();
 
 	void Awake () {
 		if (control == null) {
@@ -73,6 +74,8 @@ public class GameControl : MonoBehaviour {
 		openWorldData.enemy1.posX = 20.0F;
 		openWorldData.enemy1.posY = 2.19F;
 		openWorldData.enemy1.posZ = 20.0F;
+		openWorldData.mission1.started = false;
+		openWorldData.mission1.finished = false;
 
 		villageData.turn = 1;
 
@@ -80,22 +83,25 @@ public class GameControl : MonoBehaviour {
 	}
 	
 	void OnGUI(){
-		GUI.Label (new Rect(200, 10, 150, 30), "Level: " + playerData.level);
-		GUI.Label (new Rect(200, 30, 150, 30), "Health: " + playerData.curHealth);
-		GUI.Label (new Rect(200, 50, 150, 30), "Energy: " + playerData.curEnergy);
-		GUI.Label (new Rect(200, 70, 150, 30), "Experience: " + playerData.curExperience);
-		GUI.Label (new Rect(200, 90, 150, 30), "DamageMultiplier: " + playerData.curDamageMultiplier);
-
-		GUI.Label (new Rect(200, 110, 150, 30), "playerPosX: " + openWorldData.playerPosX);
-		GUI.Label (new Rect(200, 130, 150, 30), "playerPosY: " + openWorldData.playerPosY);
-		GUI.Label (new Rect(200, 150, 150, 30), "PlayerPosZ: " + openWorldData.playerPosZ);
-		GUI.Label (new Rect(200, 170, 150, 30), "EnemyIsDead: " + openWorldData.enemy1.isDead);
-		GUI.Label (new Rect(200, 190, 150, 30), "EnemyPosX: " + openWorldData.enemy1.posX);
-		GUI.Label (new Rect(200, 210, 150, 30), "EnemyPosY: " + openWorldData.enemy1.posY);
-		GUI.Label (new Rect(200, 230, 150, 30), "EnemyPosZ: " + openWorldData.enemy1.posZ);
-
-		GUI.Label (new Rect (200, 250, 150, 30), "Turn: " + villageData.turn);
-		GUI.Label (new Rect(200, 270, 150, 30), "EnemyisPlayerInSight: " + openWorldData.enemy1.isPlayerInSight);
+		GUI.Label (new Rect(200, 10, 150, 30), "Mission: ");
+		GUI.Label (new Rect(200, 30, 150, 30), "started: " + openWorldData.mission1.started);
+		GUI.Label (new Rect(200, 50, 150, 30), "finished: " + openWorldData.mission1.finished);
+//		GUI.Label (new Rect(200, 10, 150, 30), "Level: " + playerData.level);
+//		GUI.Label (new Rect(200, 30, 150, 30), "Health: " + playerData.curHealth);
+//		GUI.Label (new Rect(200, 50, 150, 30), "Energy: " + playerData.curEnergy);
+//		GUI.Label (new Rect(200, 70, 150, 30), "Experience: " + playerData.curExperience);
+//		GUI.Label (new Rect(200, 90, 150, 30), "DamageMultiplier: " + playerData.curDamageMultiplier);
+//
+//		GUI.Label (new Rect(200, 110, 150, 30), "playerPosX: " + openWorldData.playerPosX);
+//		GUI.Label (new Rect(200, 130, 150, 30), "playerPosY: " + openWorldData.playerPosY);
+//		GUI.Label (new Rect(200, 150, 150, 30), "PlayerPosZ: " + openWorldData.playerPosZ);
+//		GUI.Label (new Rect(200, 170, 150, 30), "EnemyIsDead: " + openWorldData.enemy1.isDead);
+//		GUI.Label (new Rect(200, 190, 150, 30), "EnemyPosX: " + openWorldData.enemy1.posX);
+//		GUI.Label (new Rect(200, 210, 150, 30), "EnemyPosY: " + openWorldData.enemy1.posY);
+//		GUI.Label (new Rect(200, 230, 150, 30), "EnemyPosZ: " + openWorldData.enemy1.posZ);
+//
+//		GUI.Label (new Rect (200, 250, 150, 30), "Turn: " + villageData.turn);
+//		GUI.Label (new Rect(200, 270, 150, 30), "EnemyisPlayerInSight: " + openWorldData.enemy1.isPlayerInSight);
 	}
 }
 
@@ -113,7 +119,13 @@ public class OpenWorldData{
 	public float playerPosY;
 	public float playerPosZ;
 	public EnemyData enemy1 = new EnemyData();
+	public MissionData mission1 = new MissionData ();
 }
+//TODO
+//[Serializable]
+//public class NPCData{
+//	public EnemyData enemy1 = new EnemyData();
+//}
 [Serializable]
 public class EnemyData{
 	public int isDead;
@@ -125,4 +137,9 @@ public class EnemyData{
 [Serializable]
 public class VillageData{
 	public int turn;
+}
+[Serializable]
+public class MissionData{
+	public bool started;
+	public bool finished;
 }

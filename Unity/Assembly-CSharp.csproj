@@ -62,8 +62,8 @@
      <Compile Include="Assets\Scripts\Village Management Scripts\ResourceManager.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\TogglePanelButton.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\EnemyAI.cs" />
-     <Compile Include="Assets\Scripts\test1 scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\EnemySight.cs" />
+     <Compile Include="Assets\Scripts\test1 scripts\FriendControl.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\OpenWorldController.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\Rotator.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\VillageCollider.cs" />
