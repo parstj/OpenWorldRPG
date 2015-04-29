@@ -4,9 +4,11 @@ using System.Collections.Generic;
 public class BuildingManager: MonoBehaviour{
 	public const int WELL_INDEX = 0;
 	public const int FARM_INDEX = 1;
+	public const int WOODCUTTER_INDEX = 2;
 
 	public UnityEngine.UI.Text wellLevel;
 	public UnityEngine.UI.Text farmLevel;
+	public UnityEngine.UI.Text woodcutterLevel;
 
 	public List<Building> Buildings {
 		get;
@@ -23,6 +25,10 @@ public class BuildingManager: MonoBehaviour{
 		Farm newFarm = new Farm (FARM_INDEX);
 		Buildings.Add(newFarm);
 		farmLevel.text = "Level: " + Buildings[FARM_INDEX].Level.ToString();
+
+		Woodcutter newWoodcutter = new Woodcutter (WOODCUTTER_INDEX);
+		Buildings.Add(newWoodcutter);
+		woodcutterLevel.text = "Level: " + Buildings[WOODCUTTER_INDEX].Level.ToString();
 	}
 	
 	public void levelUpWell(){
@@ -33,5 +39,10 @@ public class BuildingManager: MonoBehaviour{
 	public void levelUpFarm(){
 		Buildings[FARM_INDEX].levelUp();
 		farmLevel.text = "Level: " + Buildings[FARM_INDEX].Level.ToString();
+	}
+
+	public void levelUpWoodcutter(){
+		Buildings[WOODCUTTER_INDEX].levelUp();
+		woodcutterLevel.text = "Level: " + Buildings[WOODCUTTER_INDEX].Level.ToString();
 	}
 }
