@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour {
 
 	#region endTurn
 	public void EndTurn(){
-		buildingManager.buildWell();
 		buildingsEndTurn ();
 		Turns++;
 	}
@@ -32,12 +31,4 @@ public class GameManager : MonoBehaviour {
 		resources.updateAllDisplays();
 	}
 	#endregion
-
-	#region buttonClicks
-	public void buildWell(){
-		
-	}
-	#endregion
-
-
 }

@@ -2,23 +2,47 @@
 using System.Collections.Generic;
 
 public class BuildingManager: MonoBehaviour{
-	public const int WELL_INDEX = 1;
-	public List<Building> buildings2;
+	public const int WELL_INDEX = 0;
+	public const int FARM_INDEX = 1;
+	public const int WOODCUTTER_INDEX = 2;
+
+	public UnityEngine.UI.Text wellLevel;
+	public UnityEngine.UI.Text farmLevel;
+	public UnityEngine.UI.Text woodcutterLevel;
 
 	public List<Building> Buildings {
 		get;
 		set;
 	}
 
-	public void buildWell(){
-		if (Buildings == null) {
-			Buildings = new List<Building>();
-		}
-		Well newWell = new Well (WELL_INDEX);
-		Buildings.Add(newWell);
-	}
-
 	void Start(){
 		Buildings = new List<Building>();
+
+		Well newWell = new Well (WELL_INDEX);
+		Buildings.Add(newWell);
+		wellLevel.text = "Level: " + Buildings[WELL_INDEX].Level.ToString();
+
+		Farm newFarm = new Farm (FARM_INDEX);
+		Buildings.Add(newFarm);
+		farmLevel.text = "Level: " + Buildings[FARM_INDEX].Level.ToString();
+
+		Woodcutter newWoodcutter = new Woodcutter (WOODCUTTER_INDEX);
+		Buildings.Add(newWoodcutter);
+		woodcutterLevel.text = "Level: " + Buildings[WOODCUTTER_INDEX].Level.ToString();
+	}
+	
+	public void levelUpWell(){
+		Buildings[WELL_INDEX].levelUp();
+		wellLevel.text = "Level: " + Buildings[WELL_INDEX].Level.ToString();
+	}
+
+	public void levelUpFarm(){
+		Buildings[FARM_INDEX].levelUp();
+		farmLevel.text = "Level: " + Buildings[FARM_INDEX].Level.ToString();
+	}
+
+	public void levelUpWoodcutter(){
+		Buildings[WOODCUTTER_INDEX].levelUp();
+		woodcutterLevel.text = "Level: " + Buildings[WOODCUTTER_INDEX].Level.ToString();
 	}
 }
