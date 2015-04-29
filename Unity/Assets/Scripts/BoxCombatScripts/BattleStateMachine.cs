@@ -219,6 +219,9 @@ public class BattleStateMachine : MonoBehaviour
 		Invoke("TestFunc", 5f);
 		if(winning == "You Win!"){
 			Debug.Log("win here");
+			GameControl.control.playerData.curHealth = playerhealth;
+			GameControl.control.playerData.curEnergy = energy;
+			GameControl.control.playerData.curExperience = BasePlayer.getExperience() + 10;
 			if (Application.CanStreamedLevelBeLoaded ("test1")) {
 				Application.LoadLevel ("test1");
 			}

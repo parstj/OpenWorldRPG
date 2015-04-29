@@ -11,8 +11,8 @@ public class BasePlayer : MonoBehaviour {
 	private static Attack attack3 = new Attack("Call for Help", 0, 0, 1);
 	private static Attack attack4 = new Attack ("Rest", 0, 0, 2);
 	public int level; 
-	public int experience;
-	private int damageMultiplier;
+	private static int experience;
+	//private int damageMultiplier;
 	
 	public BasePlayer (string Name){
 		this.PlayerName = Name;
@@ -22,6 +22,9 @@ public class BasePlayer : MonoBehaviour {
 		return health;
 	}
 
+	public static int getExperience(){
+		return experience;
+	}
 	public static int getEnergy() {
 		return energy;
 	}
@@ -53,7 +56,7 @@ public class BasePlayer : MonoBehaviour {
 		attack4 = newAttack;
 	}
 
-	public static bool canAttack(Attack passedInAttack) {
+	/*public static bool canAttack(Attack passedInAttack) {
 		if (energy >= attack1.EnergyCost) {
 			return true;
 		} else {
@@ -69,7 +72,7 @@ public class BasePlayer : MonoBehaviour {
 		} else {
 			return false;
 		}
-	}
+	}*/
 
 
 
@@ -79,7 +82,7 @@ public class BasePlayer : MonoBehaviour {
 		energy = GameControl.control.playerData.curEnergy;
 		experience = GameControl.control.playerData.curExperience;
 		level = GameControl.control.playerData.level;
-		damageMultiplier = GameControl.control.playerData.curDamageMultiplier;
+		//damageMultiplier = GameControl.control.playerData.curDamageMultiplier;
 //		Debug.Log (GameControl.control.health);
 	}
 	
