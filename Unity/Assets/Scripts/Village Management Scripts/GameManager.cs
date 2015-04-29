@@ -31,12 +31,4 @@ public class GameManager : MonoBehaviour {
 		resources.updateAllDisplays();
 	}
 	#endregion
-
-	#region buttonClicks
-	public void buildWell(){
-		
-	}
-	#endregion
-
-
 }

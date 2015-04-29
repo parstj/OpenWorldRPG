@@ -39,12 +39,18 @@ public class ResourceManager: MonoBehaviour {
 		if (Food < 10) {
 			foodDisplay.color = Color.red; 
 		}
+		else{
+			foodDisplay.color = Color.black;
+		}
 	}
 	
 	private void updateWaterDisplay(){
 		waterDisplay.text = Water.ToString ();
 		if (Water < 10) {
 			waterDisplay.color = Color.red; 
+		}
+		else{
+			waterDisplay.color = Color.black;
 		}
 	}
 	
@@ -71,7 +77,7 @@ public class ResourceManager: MonoBehaviour {
 		Water = 0;
 		Wood = 0;
 		Stone = 0;
-		CurrentPop = 0;
+		CurrentPop = 2;
 		MaxPop = 10;
 
 		updateAllDisplays();
