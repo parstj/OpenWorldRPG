@@ -4,9 +4,9 @@ using System.Collections;
 public class BattleStateMachine : MonoBehaviour
 {
 
-	public int playerhealth = BasePlayer.getHealth();
-	public int enemyhealth;
-	public int energy;
+	private int playerhealth = BasePlayer.getHealth();
+	private int enemyhealth;
+	private int energy;
 	public string winning = "";
 	public string energyStatus = ""; //message will appear that says you're out of energy and cannot attack
 
