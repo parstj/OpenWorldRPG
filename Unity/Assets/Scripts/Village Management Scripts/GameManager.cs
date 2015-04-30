@@ -3,16 +3,18 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-	
+
+	public static GameManager gameManager;
+
 	public int Turns { get; set; }
 	public BuildingManager buildingManager;
 	public ResourceManager resources;
 
 	void Awake () {
-		if (control == null) {
+		if (gameManager == null) {
 			DontDestroyOnLoad (gameObject);
-			control = this;
-		} else if(control != this){
+			gameManager = this;
+		} else if(gameManager != this){
 			Destroy(gameObject);
 		}
 	}
@@ -65,14 +67,4 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	#endregion
-
-	public void leaveVillageButtonClick(){
-		foreach(Building b in buildingManager.Buildings){
-			GameControl.control.villageData.lvl_building1 = 
-		}
-
-		if(Application.CanStreamedLevelBeLoaded("test1")){
-			Application.LoadLevel ("test1");
-		}
-	}
 }
