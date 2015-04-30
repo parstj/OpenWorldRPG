@@ -63,5 +63,16 @@ public class GameManager : MonoBehaviour {
 			return true;
 		}
 	}
+	
 	#endregion
+
+	public void leaveVillageButtonClick(){
+		foreach(Building b in buildingManager.Buildings){
+			GameControl.control.villageData.lvl_building1 = 
+		}
+
+		if(Application.CanStreamedLevelBeLoaded("test1")){
+			Application.LoadLevel ("test1");
+		}
+	}
 }

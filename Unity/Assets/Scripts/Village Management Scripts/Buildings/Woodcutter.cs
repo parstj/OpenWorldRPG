@@ -9,6 +9,6 @@ public class Woodcutter : Building {
 	}
 	
 	public override void applyBuildingEffects(ResourceManager resourceManager){
-		resourceManager.Wood += Mathf.FloorToInt((resourceManager.CurrentPop / 2) * this.Level);
+		resourceManager.Wood += Mathf.FloorToInt((resourceManager.CurrentPop / 4) * this.Level);
 	}
 }

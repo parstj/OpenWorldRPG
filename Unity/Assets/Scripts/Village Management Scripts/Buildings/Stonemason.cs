@@ -9,6 +9,6 @@ public class Stonemason : Building {
 	}
 	
 	public override void applyBuildingEffects(ResourceManager resourceManager){
-		resourceManager.Stone += Mathf.FloorToInt((resourceManager.CurrentPop / 2) * this.Level);
+		resourceManager.Stone += Mathf.FloorToInt((resourceManager.CurrentPop / 4) * this.Level);
 	}
 }
