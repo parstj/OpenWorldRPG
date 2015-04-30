@@ -26,6 +26,16 @@ public class GameManager : MonoBehaviour {
 		foreach(Building b in buildingManager.Buildings){
 			b.applyBuildingEffects(resources);
 		}
+		//Checks to see if the population can be increased
+		if (resources.CurrentPop < resources.MaxPop) {
+			//Checks to see if there is enough water available
+			if(buildingManager.Buildings[0].Level > (resources.CurrentPop + buildingManager.Buildings[1].Level)){
+				//Checks to see if there is enough food available
+				if((buildingManager.Buildings[1].Level * 2) > resources.CurrentPop){
+					resources.CurrentPop++;
+				}
+			}
+		}
 		resources.updateAllDisplays();
 	}
 
