@@ -2,11 +2,16 @@
 using System.Collections;
 
 public class ColliderController: MonoBehaviour {
-	public GameObject camera1;
-	public GameObject camera2;
-	public GameObject panel1;
-	public GameObject panel2;
-	public GameObject panel3;
+	public GameObject mainCamera;
+	public GameObject friendCamera;
+	public GameObject neutralCamera;
+
+	public GameObject friendPanel1;
+	public GameObject friendPanel2;
+	public GameObject friendPanel3;
+	public GameObject neutralPanel1;
+	public GameObject neutralPanel2;
+	public GameObject neutralPanel3;
 
 	// Update is called once per frame
 	void OnTriggerEnter(Collider other){
@@ -39,30 +44,30 @@ public class ColliderController: MonoBehaviour {
 		player.transform.position = newLoc.position;
 		
 		//switch camera
-		camera1.SetActive (false);
-		camera2.SetActive (true);
+		mainCamera.SetActive (false);
+		friendCamera.SetActive (true);
 
 		//reinitialize panels
-		panel1.SetActive (false);
-		panel2.SetActive (false);
-		panel3.SetActive (false);
+		friendPanel1.SetActive (false);
+		friendPanel2.SetActive (false);
+		friendPanel3.SetActive (false);
 
 		//mission finished
 		if (GameControl.control.openWorldData.mission1.finished) {
-			panel3.SetActive (true);
+			friendPanel3.SetActive (true);
 		} 
 		//never started
 		else if (!GameControl.control.openWorldData.mission1.started) {
-			panel1.SetActive (true);
+			friendPanel1.SetActive (true);
 		} 
 		//just finished
 		else if (GameControl.control.openWorldData.enemy1.isDead == 1) {
-			panel3.SetActive (true);
+			friendPanel3.SetActive (true);
 			GameControl.control.openWorldData.mission1.finished = true;
 		}
 		//not finisehd yet
 		else {
-			panel2.SetActive (true);
+			friendPanel2.SetActive (true);
 		}
 	}
 
