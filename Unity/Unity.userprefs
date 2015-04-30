@@ -1,11 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/test1 scripts/ColliderController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Data/GameControl.cs">
     <Files>
-      <File FileName="Assets/Scripts/test1 scripts/EnemyAI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Data/GameControl.cs" Line="38" Column="3" />
-      <File FileName="Assets/Scripts/test1 scripts/OpenWorldController.cs" Line="77" Column="84" />
-      <File FileName="Assets/Scripts/test1 scripts/ColliderController.cs" Line="84" Column="33" />
+      <File FileName="Assets/Scripts/Data/GameControl.cs" Line="88" Column="34" />
+      <File FileName="Assets/Scripts/test1 scripts/OpenWorldController.cs" Line="62" Column="4" />
+      <File FileName="Assets/Scripts/test1 scripts/ColliderController.cs" Line="93" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

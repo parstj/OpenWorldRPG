@@ -83,9 +83,9 @@ public class GameControl : MonoBehaviour {
 		playerData.curDamageMultiplier = 1;
 
 		openWorldData.turn = 1;
-		openWorldData.playerPosX = 8.0F;
+		openWorldData.playerPosX = 16.0F;
 		openWorldData.playerPosY = 2.0F;
-		openWorldData.playerPosZ = 9.0F;
+		openWorldData.playerPosZ = 53.0F;
 		openWorldData.enemy1.isDead = 0;
 		openWorldData.enemy1.isPlayerInSight = false;
 		openWorldData.enemy1.posX = 26.0F;
@@ -96,7 +96,7 @@ public class GameControl : MonoBehaviour {
 		openWorldData.neutral1.isDead = 0;
 		openWorldData.neutral1.isEnemy = false;
 		openWorldData.neutral1.posX = 16.0F;
-		openWorldData.neutral1.posY = 0.5F;
+		openWorldData.neutral1.posY = 0.0F;
 		openWorldData.neutral1.posZ = 49.0F;
 
 		villageData.lvl_building1 = 1;
