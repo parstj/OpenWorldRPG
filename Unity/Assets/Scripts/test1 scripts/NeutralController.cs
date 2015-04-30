@@ -8,6 +8,9 @@ public class NeutralController : MonoBehaviour {
 	public GameObject panel2;
 	public GameObject panel3;
 
+	public GameObject returnPoint;
+	public GameObject player;
+
 	public void Accept(){
 		GameControl.control.villageData.gold = 0;
 		panel1.SetActive (false);
@@ -20,6 +23,7 @@ public class NeutralController : MonoBehaviour {
 	}
 
 	public void FinishAccept(){
+		player.transform.position = returnPoint.transform.position;
 		camera2.SetActive (false);
 		camera1.SetActive (true);
 
@@ -27,6 +31,7 @@ public class NeutralController : MonoBehaviour {
 	}
 
 	public void FinishRefuse(){
+		player.transform.position = returnPoint.transform.position;
 		camera2.SetActive (false);
 		camera1.SetActive (true);
 

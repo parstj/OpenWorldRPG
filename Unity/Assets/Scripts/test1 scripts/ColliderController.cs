@@ -13,6 +13,8 @@ public class ColliderController: MonoBehaviour {
 	public GameObject neutralPanel2;
 	public GameObject neutralPanel3;
 
+	public GameObject trapPoint;
+
 	// Update is called once per frame
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "VillageTag") {
@@ -39,13 +41,11 @@ public class ColliderController: MonoBehaviour {
 	void MeetFriend(){
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 		
-		//teleport player
-		Transform newLoc = GameObject.Find ("FriendExit_001").transform;
-		player.transform.position = newLoc.position;
-		
 		//switch camera
 		mainCamera.SetActive (false);
 		friendCamera.SetActive (true);
+		//teleport player
+		player.transform.position = trapPoint.transform.position;
 
 		//reinitialize panels
 		friendPanel1.SetActive (false);
@@ -77,12 +77,12 @@ public class ColliderController: MonoBehaviour {
 		if (!GameControl.control.openWorldData.neutral1.isEnemy) {
 			//teleport player
 			GameObject player = GameObject.FindGameObjectWithTag ("Player");
-			Transform newLoc = GameObject.Find ("NeturalExit_001").transform;
-			player.transform.position = newLoc.position;
 
 			//switch camera
 			mainCamera.SetActive (false);
 			neutralCamera.SetActive (true);
+			//teleport player
+			player.transform.position = trapPoint.transform.position;
 			
 			//reinitialize panels
 			neutralPanel1.SetActive (false);
