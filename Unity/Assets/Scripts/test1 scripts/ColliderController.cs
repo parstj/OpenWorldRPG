@@ -90,6 +90,7 @@ public class ColliderController: MonoBehaviour {
 			neutralPanel3.SetActive (false);
 
 			neutralPanel1.SetActive (true);
+
 		} else {
 			OpenWorldController.mySave (0, 0, 1);
 			if (Application.CanStreamedLevelBeLoaded ("BoxCombat")) {

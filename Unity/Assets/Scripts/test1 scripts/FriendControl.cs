@@ -4,7 +4,6 @@ using System.Collections;
 public class FriendControl : MonoBehaviour {
 	public GameObject camera1;
 	public GameObject camera2;
-	public GameObject exit;
 
 	public void Accept(){
 		GameControl.control.openWorldData.mission1.started = true;
