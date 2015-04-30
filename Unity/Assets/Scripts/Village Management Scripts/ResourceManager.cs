@@ -71,6 +71,8 @@ public class ResourceManager: MonoBehaviour {
 	}
 	#endregion
 
+
+
 	void Start(){
 		Gold = 0;
 		Food = 0;
