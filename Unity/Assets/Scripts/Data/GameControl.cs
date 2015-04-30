@@ -66,18 +66,33 @@ public class GameControl : MonoBehaviour {
 		playerData.curExperience = 0;
 		playerData.curDamageMultiplier = 1;
 
-		openWorldData.playerPosX = 2.0F;
-		openWorldData.playerPosY = 1.0F;
-		openWorldData.playerPosZ = 2.0F;
+		openWorldData.turn = 1;
+
+		openWorldData.playerPosX = 8.0F;
+		openWorldData.playerPosY = 2.0F;
+		openWorldData.playerPosZ = 9.0F;
 		openWorldData.enemy1.isDead = 0;
 		openWorldData.enemy1.isPlayerInSight = false;
-		openWorldData.enemy1.posX = 20.0F;
-		openWorldData.enemy1.posY = 2.19F;
-		openWorldData.enemy1.posZ = 20.0F;
+		openWorldData.enemy1.posX = 26.0F;
+		openWorldData.enemy1.posY = 1.0F;
+		openWorldData.enemy1.posZ = 13.0F;
 		openWorldData.mission1.started = false;
 		openWorldData.mission1.finished = false;
 
-		villageData.turn = 1;
+		villageData.lvl_building1 = 1;
+		villageData.lvl_building2 = 1;
+		villageData.lvl_building3 = 1;
+		villageData.lvl_building4 = 1;
+		villageData.lvl_building5 = 1;
+		
+		//resources
+		villageData.gold = 0;
+		villageData.food = 0;
+		villageData.water = 0;
+		villageData.wood = 0;
+		villageData.stone = 0;
+		villageData.cur_population = 2;
+		villageData.max_population = 5;
 
 		Save ();
 	}
@@ -104,7 +119,7 @@ public class GameControl : MonoBehaviour {
 //		GUI.Label (new Rect(200, 270, 150, 30), "EnemyisPlayerInSight: " + openWorldData.enemy1.isPlayerInSight);
 	}
 }
-
+//DATA1
 [Serializable]
 public class PlayerData{
 	public int level;
@@ -113,8 +128,11 @@ public class PlayerData{
 	public int curExperience;
 	public int curDamageMultiplier;
 }
+//DATA2
 [Serializable]
 public class OpenWorldData{
+	public int turn;
+
 	public float playerPosX;
 	public float playerPosY;
 	public float playerPosZ;
@@ -135,11 +153,30 @@ public class EnemyData{
 	public float posZ;
 }
 [Serializable]
-public class VillageData{
-	public int turn;
-}
-[Serializable]
 public class MissionData{
 	public bool started;
 	public bool finished;
 }
+//DATA3
+[Serializable]
+public class VillageData{
+	//five buildings' levels
+	public int lvl_building1;
+	public int lvl_building2;
+	public int lvl_building3;
+	public int lvl_building4;
+	public int lvl_building5;
+
+	//resources
+	public int gold;
+	public int food;
+	public int water;
+	public int wood;
+	public int stone;
+	public int cur_population;
+	public int max_population;
+}
+//public class BuildingData{
+//	public int turn;
+//	
+//}

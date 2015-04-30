@@ -57,7 +57,9 @@
      <Compile Include="Assets\Scripts\OpeningScene Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\BuildingManager.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\Building.cs" />
+     <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\Farm.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\Well.cs" />
+     <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\Woodcutter.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\LeaveVillageButton.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\ResourceManager.cs" />
@@ -75,6 +77,7 @@
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Cha_Data\Shader\WrapLambert.shader" />
+     <None Include="Assets\Baker House\Readme.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
@@ -82,7 +85,11 @@
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
+<<<<<<< HEAD
+ <HintPath>/Users/rhixson/OpenWorldRPG/Unity/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+=======
  <HintPath>/Users/blacktheon/Documents/blacktheon/SourceTree/OpenWorldRPG/Unity/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+>>>>>>> origin/master
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
