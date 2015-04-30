@@ -31,8 +31,8 @@ public class DropDownMenu : MonoBehaviour {
 		GameControl.control.Load ();
 		menu.SetActive (false);
 
-		if(Application.CanStreamedLevelBeLoaded("test1")){
-			Application.LoadLevel ("test1");
+		if(Application.CanStreamedLevelBeLoaded("OpenWorld")){
+			Application.LoadLevel ("OpenWorld");
 		}
 	}
 	public void ReturnIt(){

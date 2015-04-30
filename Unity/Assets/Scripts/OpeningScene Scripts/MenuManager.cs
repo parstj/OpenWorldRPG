@@ -14,16 +14,16 @@ public class MenuManager : MonoBehaviour {
 	public void newGameButtonClick(){
 		GameControl.control.NewGame ();
 
-		if(Application.CanStreamedLevelBeLoaded("test1")){
-			Application.LoadLevel ("test1");
+		if(Application.CanStreamedLevelBeLoaded("OpenWorld")){
+			Application.LoadLevel ("OpenWorld");
 		}
 	}
 
 	public void loadGameButtonClick(){
 		GameControl.control.Load ();
 
-		if(Application.CanStreamedLevelBeLoaded("test1")){
-			Application.LoadLevel ("test1");
+		if(Application.CanStreamedLevelBeLoaded("OpenWorld")){
+			Application.LoadLevel ("OpenWorld");
 		}
 	}
 }

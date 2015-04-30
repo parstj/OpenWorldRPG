@@ -222,8 +222,8 @@ public class BattleStateMachine : MonoBehaviour
 			GameControl.control.playerData.curHealth = playerhealth;
 			GameControl.control.playerData.curEnergy = energy;
 			GameControl.control.playerData.curExperience = BasePlayer.getExperience() + 10;
-			if (Application.CanStreamedLevelBeLoaded ("test1")) {
-				Application.LoadLevel ("test1");
+			if (Application.CanStreamedLevelBeLoaded ("OpenWorld")) {
+				Application.LoadLevel ("OpenWorld");
 			}
 		}
 		else if(winning == "You Lose!"){
