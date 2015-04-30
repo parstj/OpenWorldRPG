@@ -79,7 +79,7 @@ public class ResourceManager: MonoBehaviour {
 		Water = 0;
 		Wood = 0;
 		Stone = 0;
-		CurrentPop = 2;
+		CurrentPop = 4;
 		MaxPop = 5;
 
 		updateAllDisplays();
