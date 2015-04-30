@@ -58,6 +58,8 @@
      <Compile Include="Assets\Scripts\Village Management Scripts\BuildingManager.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\Building.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\Farm.cs" />
+     <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\House.cs" />
+     <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\Stonemason.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\Well.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\Buildings\Woodcutter.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\GameManager.cs" />
