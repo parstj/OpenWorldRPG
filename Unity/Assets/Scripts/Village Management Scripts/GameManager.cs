@@ -3,24 +3,25 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-
-	public static GameManager gameManager;
-
 	public int Turns { get; set; }
 	public BuildingManager buildingManager;
 	public ResourceManager resources;
 
-	void Awake () {
-		if (gameManager == null) {
-			DontDestroyOnLoad (gameObject);
-			gameManager = this;
-		} else if(gameManager != this){
-			Destroy(gameObject);
-		}
-	}
-
 	// Use this for initialization
 	void Start () {
+		resources.Gold = GameControl.control.villageData.gold;
+		resources.Food = GameControl.control.villageData.food;
+		resources.Water = GameControl.control.villageData.water;
+		resources.Wood = GameControl.control.villageData.wood;
+		resources.Stone = GameControl.control.villageData.stone;
+		resources.CurrentPop = GameControl.control.villageData.cur_population;
+		resources.MaxPop = GameControl.control.villageData.max_population;
+
+		buildingManager.Buildings[0].Level = GameControl.control.villageData.lvl_building1;
+		buildingManager.Buildings[1].Level = GameControl.control.villageData.lvl_building2;
+		buildingManager.Buildings[2].Level = GameControl.control.villageData.lvl_building3;
+		buildingManager.Buildings[3].Level = GameControl.control.villageData.lvl_building4;
+		buildingManager.Buildings[4].Level = GameControl.control.villageData.lvl_building5;
 	}
 	
 	// Update is called once per frame
