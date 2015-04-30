@@ -5,8 +5,12 @@ public class DropDownMenu : MonoBehaviour {
 	public GameObject menu;
 
 	void DorpIt(){
-		if (Application.loadedLevel != 1) {
-			menu.SetActive(true);
+		if (Application.loadedLevel != 0) {
+			if(!menu.activeSelf){
+				menu.SetActive(true);
+			} else{
+				menu.SetActive(false);
+			}
 		}
 	}
 
@@ -26,6 +30,10 @@ public class DropDownMenu : MonoBehaviour {
 	public void LoadIt(){
 		GameControl.control.Load ();
 		menu.SetActive (false);
+
+		if(Application.CanStreamedLevelBeLoaded("test1")){
+			Application.LoadLevel ("test1");
+		}
 	}
 	public void ReturnIt(){
 		menu.SetActive (false);
