@@ -3,14 +3,8 @@ using System.Collections;
 
 public class MenuManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void Awake(){
+		GameControl.control.PlayBgm1 ();
 	}
 
 	public void quitButtonClick(){

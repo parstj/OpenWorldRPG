@@ -14,6 +14,7 @@ public class VillageCollider: MonoBehaviour {
 			OpenWorldController.mySave (0, 1);
 
 			if (Application.CanStreamedLevelBeLoaded ("Village Management")) {
+				GameControl.control.PlayBgm2();
 				Application.LoadLevel ("Village Management");
 			}
 		} else if (other.gameObject.tag == "EnemyTag") {

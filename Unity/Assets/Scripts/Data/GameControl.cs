@@ -13,6 +13,9 @@ public class GameControl : MonoBehaviour {
 	public VillageData villageData = new VillageData();
 	public MissionData missionData = new MissionData();
 
+	public AudioSource bgm1;
+	public AudioSource bgm2;
+
 	void Awake () {
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
@@ -20,6 +23,19 @@ public class GameControl : MonoBehaviour {
 		} else if(control != this){
 			Destroy(gameObject);
 		}
+	}
+
+	public void PlayBgm1(){
+		if(bgm2.isPlaying)
+			bgm2.Stop ();
+		if(!bgm1.isPlaying)
+			bgm1.Play ();
+	}
+	public void PlayBgm2(){
+		if(bgm1.isPlaying)
+			bgm1.Stop ();
+		if(!bgm2.isPlaying)
+			bgm2.Play ();
 	}
 
 	public void Save(){

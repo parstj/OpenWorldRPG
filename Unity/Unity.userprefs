@@ -6,7 +6,7 @@
       <File FileName="Assets/Scripts/test1 scripts/EnemyAI.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Data/GameControl.cs" Line="78" Column="37" />
       <File FileName="Assets/Scripts/test1 scripts/OpenWorldController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/test1 scripts/VillageCollider.cs" Line="50" Column="28" />
+      <File FileName="Assets/Scripts/test1 scripts/VillageCollider.cs" Line="73" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

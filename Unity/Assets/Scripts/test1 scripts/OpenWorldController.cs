@@ -8,6 +8,7 @@ public class OpenWorldController : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		GameControl.control.PlayBgm1 ();
 		myLoad ();
 	}
 	
