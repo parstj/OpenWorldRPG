@@ -5,6 +5,7 @@ public class OpenWorldController : MonoBehaviour {
 
 	GameObject player;
 	GameObject enemy1;
+	GameObject neutral1;
 
 	// Use this for initialization
 	void Awake () {
@@ -16,7 +17,7 @@ public class OpenWorldController : MonoBehaviour {
 		//initializing
 		player = GameObject.Find ("Player");
 		enemy1 = GameObject.Find ("EnemyBody_001");
-
+		neutral1 = GameObject.Find ("NeutralBody_001");
 
 		//player load
 		Vector3 playerPos = new Vector3(GameControl.control.openWorldData.playerPosX,
@@ -34,13 +35,22 @@ public class OpenWorldController : MonoBehaviour {
 		} else {
 			enemy1.SetActive(false);
 		}
+
+		//neutral load
+		if (GameControl.control.openWorldData.neutral1.isDead == 0) {
+			Vector3 neutralPos = new Vector3 (GameControl.control.openWorldData.neutral1.posX,
+			                                  GameControl.control.openWorldData.neutral1.posY,
+			                                  GameControl.control.openWorldData.neutral1.posZ);
+			neutral1.transform.position = neutralPos;
+		} else {
+			neutral1.SetActive(false);
+		}
 	}
 
 	public static void mySave(int enemyIsKilled, int villageIndex){
 		//initializing
 		GameObject player = GameObject.Find ("Player");
 		GameObject enemy1 = GameObject.Find ("EnemyBody_001");
-
 
 		//player save
 		if (villageIndex == 0) {
@@ -53,7 +63,6 @@ public class OpenWorldController : MonoBehaviour {
 			GameControl.control.openWorldData.playerPosY = exit.y;
 			GameControl.control.openWorldData.playerPosZ = exit.z;
 		}
-
 
 		//enemy save
 		if(enemyIsKilled == 1)// 1 means it is killed, 0 means not changed

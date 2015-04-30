@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\test1 scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\EnemySight.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\FriendControl.cs" />
+     <Compile Include="Assets\Scripts\test1 scripts\NeutralAI.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\OpenWorldController.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\Rotator.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />

@@ -83,7 +83,6 @@ public class GameControl : MonoBehaviour {
 		playerData.curDamageMultiplier = 1;
 
 		openWorldData.turn = 1;
-
 		openWorldData.playerPosX = 8.0F;
 		openWorldData.playerPosY = 2.0F;
 		openWorldData.playerPosZ = 9.0F;
@@ -94,13 +93,17 @@ public class GameControl : MonoBehaviour {
 		openWorldData.enemy1.posZ = 23.0F;
 		openWorldData.mission1.started = false;
 		openWorldData.mission1.finished = false;
+		openWorldData.neutral1.isDead = 0;
+		openWorldData.neutral1.isEnemy = false;
+		openWorldData.neutral1.posX = 16.0F;
+		openWorldData.neutral1.posY = 0.5F;
+		openWorldData.neutral1.posZ = 49.0F;
 
 		villageData.lvl_building1 = 1;
 		villageData.lvl_building2 = 1;
 		villageData.lvl_building3 = 1;
 		villageData.lvl_building4 = 1;
 		villageData.lvl_building5 = 1;
-		
 		//resources
 		villageData.gold = 0;
 		villageData.food = 0;
@@ -154,6 +157,7 @@ public class OpenWorldData{
 	public float playerPosZ;
 	public EnemyData enemy1 = new EnemyData();
 	public MissionData mission1 = new MissionData ();
+	public NeutralData neutral1 = new NeutralData ();
 }
 //TODO
 //[Serializable]
@@ -172,6 +176,14 @@ public class EnemyData{
 public class MissionData{
 	public bool started;
 	public bool finished;
+}
+[Serializable]
+public class NeutralData{
+	public int isDead;
+	public bool isEnemy;
+	public float posX;
+	public float posY;
+	public float posZ;
 }
 //DATA3
 [Serializable]
