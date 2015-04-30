@@ -5,6 +5,7 @@ public class Farm : Building {
 	
 	public Farm(int buildingType) : base(buildingType){
 		this.Name = "Farm";
+		this.CostModifier = 1.2f;
 	}
 	
 	public override void applyBuildingEffects(ResourceManager resourceManager){
