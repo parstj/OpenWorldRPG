@@ -5,6 +5,7 @@ public class Well : Building {
 
 	public Well(int buildingType) : base(buildingType){
 		this.Name = "Well";
+		this.CostModifier = 1.0f;
 	}
 
 	public override void applyBuildingEffects(ResourceManager resourceManager){

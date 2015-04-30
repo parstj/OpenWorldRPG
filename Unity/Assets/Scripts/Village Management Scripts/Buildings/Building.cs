@@ -2,7 +2,7 @@
 using System.Collections;
 
 public abstract class Building {
-	
+
 	public int buildingType {
 		get;
 		set;
@@ -10,6 +10,7 @@ public abstract class Building {
 
 	public string Name { get; set; }
 	public int Level { get; set; }
+	public float CostModifier { get; set; }
 
 	public Building(int buildingType){
 		this.buildingType = buildingType;
