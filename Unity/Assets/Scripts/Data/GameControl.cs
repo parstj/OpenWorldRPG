@@ -83,9 +83,9 @@ public class GameControl : MonoBehaviour {
 		playerData.curDamageMultiplier = 1;
 
 		openWorldData.turn = 1;
-		openWorldData.playerPosX = 16.0F;
+		openWorldData.playerPosX = 8.0F;
 		openWorldData.playerPosY = 2.0F;
-		openWorldData.playerPosZ = 53.0F;
+		openWorldData.playerPosZ = 9.0F;
 		openWorldData.enemy1.isDead = 0;
 		openWorldData.enemy1.isPlayerInSight = false;
 		openWorldData.enemy1.posX = 26.0F;
