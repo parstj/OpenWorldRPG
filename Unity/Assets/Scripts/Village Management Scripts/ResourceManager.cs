@@ -78,7 +78,7 @@ public class ResourceManager: MonoBehaviour {
 		Wood = 0;
 		Stone = 0;
 		CurrentPop = 2;
-		MaxPop = 10;
+		MaxPop = 5;
 
 		updateAllDisplays();
 	}

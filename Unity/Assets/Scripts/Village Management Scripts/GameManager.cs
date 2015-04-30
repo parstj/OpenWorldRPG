@@ -3,9 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-
-	public UnityEngine.UI.Text hello2;
-	public int hello;
+	
 	public int Turns { get; set; }
 	public BuildingManager buildingManager;
 	public ResourceManager resources;
@@ -29,6 +27,22 @@ public class GameManager : MonoBehaviour {
 			b.applyBuildingEffects(resources);
 		}
 		resources.updateAllDisplays();
+	}
+
+	public bool checkResources(int index){
+		int level = buildingManager.Buildings [index].Level;
+		float costModifier = buildingManager.Buildings [index].CostModifier;
+
+		int cost = Mathf.CeilToInt (level * costModifier);
+
+		if(resources.Wood < cost || resources.Stone < cost){
+			return false;
+		}
+		else{
+			resources.Wood -= cost;
+			resources.Stone -= cost;
+			return true;
+		}
 	}
 	#endregion
 }
