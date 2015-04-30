@@ -2,14 +2,24 @@
 using System.Collections;
 
 public class NeutralAI : MonoBehaviour {
+	public float chaseSpeed = 3f;
 
-	// Use this for initialization
-	void Start () {
-	
+	private NavMeshAgent nav;
+	private Transform player;
+
+	void Awake(){
+		player = GameObject.FindGameObjectWithTag("Player").transform;
+		nav = GetComponent <NavMeshAgent> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void Update(){
+		if(GameControl.control.openWorldData.neutral1.isEnemy){
+			Chasing ();
+		}
+	}
+
+	void Chasing(){
+		nav.speed = chaseSpeed;
+		nav.SetDestination (player.position);
 	}
 }
