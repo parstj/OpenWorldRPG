@@ -66,12 +66,12 @@
      <Compile Include="Assets\Scripts\Village Management Scripts\LeaveVillageButton.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\ResourceManager.cs" />
      <Compile Include="Assets\Scripts\Village Management Scripts\TogglePanelButton.cs" />
+     <Compile Include="Assets\Scripts\test1 scripts\ColliderController.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\EnemySight.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\FriendControl.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\OpenWorldController.cs" />
      <Compile Include="Assets\Scripts\test1 scripts\Rotator.cs" />
-     <Compile Include="Assets\Scripts\test1 scripts\VillageCollider.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />

@@ -91,7 +91,7 @@ public class GameControl : MonoBehaviour {
 		openWorldData.enemy1.isPlayerInSight = false;
 		openWorldData.enemy1.posX = 26.0F;
 		openWorldData.enemy1.posY = 1.0F;
-		openWorldData.enemy1.posZ = 13.0F;
+		openWorldData.enemy1.posZ = 23.0F;
 		openWorldData.mission1.started = false;
 		openWorldData.mission1.finished = false;
 

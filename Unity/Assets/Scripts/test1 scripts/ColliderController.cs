@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class VillageCollider: MonoBehaviour {
+public class ColliderController: MonoBehaviour {
 	public GameObject camera1;
 	public GameObject camera2;
 	public GameObject panel1;
