@@ -11,29 +11,30 @@ public class VillageCollider: MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "VillageTag") {
-			OpenWorldController.mySave(0, 1);
+			OpenWorldController.mySave (0, 1);
 
 			if (Application.CanStreamedLevelBeLoaded ("Village Management")) {
 				Application.LoadLevel ("Village Management");
 			}
 		} else if (other.gameObject.tag == "EnemyTag") {
 			Debug.Log (other.name);
-			OpenWorldController.mySave(1, 0);
+			OpenWorldController.mySave (1, 0);
 
-			Debug.Log("HERE");
-			if (Application.CanStreamedLevelBeLoaded ("BoxCombat")){
+			if (Application.CanStreamedLevelBeLoaded ("BoxCombat")) {
 				Application.LoadLevel ("BoxCombat");
 			}
-		} else if(other.gameObject.tag == "FriendTag"){
-			MeetFriend();
+		} else if (other.gameObject.tag == "FriendTag") {
+			MeetFriend ();
+		} else if (other.gameObject.tag == "NeutralTag") {
+			MeetNeutral();
 		}
 	}
 
 	void MeetFriend(){
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 		
 		//teleport player
-		Transform newLoc = GameObject.Find("FriendExit_001").transform;
+		Transform newLoc = GameObject.Find ("FriendExit_001").transform;
 		player.transform.position = newLoc.position;
 		
 		//switch camera
@@ -60,7 +61,17 @@ public class VillageCollider: MonoBehaviour {
 		}
 		//not finisehd yet
 		else {
-			panel2.SetActive(true);
+			panel2.SetActive (true);
 		}
+	}
+
+	void MeetNeutral(){
+		Debug.Log ("MeetNeutral");
+
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		Transform newLoc = GameObject.Find ("NeturalExit_001").transform;
+		player.transform.position = newLoc.position;
+
+
 	}
 }
