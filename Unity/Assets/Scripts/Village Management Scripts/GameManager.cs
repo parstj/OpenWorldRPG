@@ -3,11 +3,22 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-	
+
+	public static GameManager gameManager;
+
 	public int Turns { get; set; }
 	public BuildingManager buildingManager;
 	public ResourceManager resources;
-	
+
+	void Awake () {
+		if (gameManager == null) {
+			DontDestroyOnLoad (gameObject);
+			gameManager = this;
+		} else if(gameManager != this){
+			Destroy(gameObject);
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -54,5 +65,6 @@ public class GameManager : MonoBehaviour {
 			return true;
 		}
 	}
+	
 	#endregion
 }
