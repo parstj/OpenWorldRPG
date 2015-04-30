@@ -16,7 +16,7 @@ public class ColliderController: MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "VillageTag") {
-			OpenWorldController.mySave (0, 1);
+			OpenWorldController.mySave (0, 1, 0);
 
 			if (Application.CanStreamedLevelBeLoaded ("Village Management")) {
 				GameControl.control.PlayBgm2();
@@ -24,7 +24,7 @@ public class ColliderController: MonoBehaviour {
 			}
 		} else if (other.gameObject.tag == "EnemyTag") {
 			Debug.Log (other.name);
-			OpenWorldController.mySave (1, 0);
+			OpenWorldController.mySave (1, 0, 0);
 
 			if (Application.CanStreamedLevelBeLoaded ("BoxCombat")) {
 				Application.LoadLevel ("BoxCombat");
@@ -74,10 +74,27 @@ public class ColliderController: MonoBehaviour {
 	void MeetNeutral(){
 		Debug.Log ("MeetNeutral");
 
-		GameObject player = GameObject.FindGameObjectWithTag ("Player");
-		Transform newLoc = GameObject.Find ("NeturalExit_001").transform;
-		player.transform.position = newLoc.position;
+		if (!GameControl.control.openWorldData.neutral1.isEnemy) {
+			//teleport player
+			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+			Transform newLoc = GameObject.Find ("NeturalExit_001").transform;
+			player.transform.position = newLoc.position;
 
+			//switch camera
+			mainCamera.SetActive (false);
+			neutralCamera.SetActive (true);
+			
+			//reinitialize panels
+			neutralPanel1.SetActive (false);
+			neutralPanel2.SetActive (false);
+			neutralPanel3.SetActive (false);
 
+			neutralPanel1.SetActive (true);
+		} else {
+			OpenWorldController.mySave (0, 0, 1);
+			if (Application.CanStreamedLevelBeLoaded ("BoxCombat")) {
+				Application.LoadLevel ("BoxCombat");
+			}
+		}
 	}
 }

@@ -3,10 +3,6 @@ using System.Collections;
 
 public class OpenWorldController : MonoBehaviour {
 
-	GameObject player;
-	GameObject enemy1;
-	GameObject neutral1;
-
 	// Use this for initialization
 	void Awake () {
 		GameControl.control.PlayBgm1 ();
@@ -15,9 +11,9 @@ public class OpenWorldController : MonoBehaviour {
 	
 	void myLoad(){
 		//initializing
-		player = GameObject.Find ("Player");
-		enemy1 = GameObject.Find ("EnemyBody_001");
-		neutral1 = GameObject.Find ("NeutralBody_001");
+		GameObject player = GameObject.Find ("Player");
+		GameObject enemy1 = GameObject.Find ("EnemyBody_001");
+		GameObject neutral1 = GameObject.Find ("NeutralBody_001");
 
 		//player load
 		Vector3 playerPos = new Vector3(GameControl.control.openWorldData.playerPosX,
@@ -47,10 +43,11 @@ public class OpenWorldController : MonoBehaviour {
 		}
 	}
 
-	public static void mySave(int enemyIsKilled, int villageIndex){
+	public static void mySave(int enemyIsKilled, int villageIndex, int neutralIsKilled){
 		//initializing
 		GameObject player = GameObject.Find ("Player");
 		GameObject enemy1 = GameObject.Find ("EnemyBody_001");
+		GameObject neutral1 = GameObject.Find ("NeutralBody_001");
 
 		//player save
 		if (villageIndex == 0) {
@@ -71,6 +68,15 @@ public class OpenWorldController : MonoBehaviour {
 			GameControl.control.openWorldData.enemy1.posX = enemy1.transform.position.x;
 			GameControl.control.openWorldData.enemy1.posY = enemy1.transform.position.y;
 			GameControl.control.openWorldData.enemy1.posZ = enemy1.transform.position.z;
+		}
+
+		//neutral save
+		if (neutralIsKilled == 1)
+			GameControl.control.openWorldData.neutral1.isDead = 1;
+		if (GameControl.control.openWorldData.neutral1.isDead == 0) {
+			GameControl.control.openWorldData.neutral1.posX = neutral1.transform.position.x;
+			GameControl.control.openWorldData.neutral1.posY = neutral1.transform.position.y;
+			GameControl.control.openWorldData.neutral1.posZ = neutral1.transform.position.z;
 		}
 	}
 }
