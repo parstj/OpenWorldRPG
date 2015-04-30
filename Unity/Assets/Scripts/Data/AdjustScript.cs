@@ -16,11 +16,11 @@ public class AdjustScript : MonoBehaviour {
 //		if (GUI.Button (new Rect (10, 220, 150, 30), "Experience down")) {
 //			GameControl.control.playerData.curExperience -= 10;
 //		}
-		if (GUI.Button (new Rect (10, 260, 150, 30), "Save")) {
-			GameControl.control.Save ();
-		}
-		if (GUI.Button (new Rect (10, 300, 150, 30), "Load")) {
-			GameControl.control.Load ();
-		}
+//		if (GUI.Button (new Rect (10, 260, 150, 30), "Save")) {
+//			GameControl.control.Save ();
+//		}
+//		if (GUI.Button (new Rect (10, 300, 150, 30), "Load")) {
+//			GameControl.control.Load ();
+//		}
 	}
 }

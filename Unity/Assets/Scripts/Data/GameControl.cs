@@ -116,10 +116,10 @@ public class GameControl : MonoBehaviour {
 		Save ();
 	}
 	
-	void OnGUI(){
-		GUI.Label (new Rect(200, 10, 150, 30), "Mission: ");
-		GUI.Label (new Rect(200, 30, 150, 30), "started: " + openWorldData.mission1.started);
-		GUI.Label (new Rect(200, 50, 150, 30), "finished: " + openWorldData.mission1.finished);
+//	void OnGUI(){
+//		GUI.Label (new Rect(200, 10, 150, 30), "Mission: ");
+//		GUI.Label (new Rect(200, 30, 150, 30), "started: " + openWorldData.mission1.started);
+//		GUI.Label (new Rect(200, 50, 150, 30), "finished: " + openWorldData.mission1.finished);
 //		GUI.Label (new Rect(200, 10, 150, 30), "Level: " + playerData.level);
 //		GUI.Label (new Rect(200, 30, 150, 30), "Health: " + playerData.curHealth);
 //		GUI.Label (new Rect(200, 50, 150, 30), "Energy: " + playerData.curEnergy);
@@ -136,7 +136,7 @@ public class GameControl : MonoBehaviour {
 //
 //		GUI.Label (new Rect (200, 250, 150, 30), "Turn: " + villageData.turn);
 //		GUI.Label (new Rect(200, 270, 150, 30), "EnemyisPlayerInSight: " + openWorldData.enemy1.isPlayerInSight);
-	}
+//	}
 }
 //DATA1
 [Serializable]

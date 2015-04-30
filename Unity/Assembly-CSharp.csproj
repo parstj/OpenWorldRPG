@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\BoxCombatScripts\EnemyPlayer.cs" />
      <Compile Include="Assets\Scripts\BoxCombatScripts\GameInformation.cs" />
      <Compile Include="Assets\Scripts\Data\AdjustScript.cs" />
+     <Compile Include="Assets\Scripts\Data\DropDownMenu.cs" />
      <Compile Include="Assets\Scripts\Data\GameControl.cs" />
      <Compile Include="Assets\Scripts\General Scripts\ActivateTrigger.cs" />
      <Compile Include="Assets\Scripts\OpeningScene Scripts\MenuManager.cs" />

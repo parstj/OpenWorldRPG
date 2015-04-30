@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MenuManager : MonoBehaviour {
 
-	void Awake(){
+	void Start(){
 		GameControl.control.PlayBgm1 ();
 	}
 
