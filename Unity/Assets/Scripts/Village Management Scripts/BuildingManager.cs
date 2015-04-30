@@ -70,6 +70,7 @@ public class BuildingManager: MonoBehaviour{
 			wellLevel.text = "Level: " + Buildings [WELL_INDEX].Level.ToString ();
 			cost = Mathf.CeilToInt (Buildings [WELL_INDEX].Level * Buildings [WELL_INDEX].CostModifier).ToString();
 			wellCost.text = "Cost to Build: " + cost + " Wood and " + cost + " Stone";
+			GameControl.control.villageData.lvl_building1 = Buildings [WELL_INDEX].Level;
 			gameManager.resources.updateAllDisplays();
 		}
 	}
@@ -80,6 +81,7 @@ public class BuildingManager: MonoBehaviour{
 			farmLevel.text = "Level: " + Buildings [FARM_INDEX].Level.ToString ();
 			cost = Mathf.CeilToInt (Buildings [FARM_INDEX].Level * Buildings [FARM_INDEX].CostModifier).ToString();
 			farmCost.text = "Cost to Build: " + cost + " Wood and " + cost + " Stone";
+			GameControl.control.villageData.lvl_building2 = Buildings [FARM_INDEX].Level;
 			gameManager.resources.updateAllDisplays();
 		}
 	}
@@ -90,6 +92,7 @@ public class BuildingManager: MonoBehaviour{
 			woodcutterLevel.text = "Level: " + Buildings[WOODCUTTER_INDEX].Level.ToString();
 			cost = Mathf.CeilToInt (Buildings [WOODCUTTER_INDEX].Level * Buildings [WOODCUTTER_INDEX].CostModifier).ToString();
 			woodcutterCost.text = "Cost to Build: " + cost + " Wood and " + cost + " Stone";
+			GameControl.control.villageData.lvl_building3 = Buildings [WOODCUTTER_INDEX].Level;
 			gameManager.resources.updateAllDisplays();
 		}
 	}
@@ -100,6 +103,7 @@ public class BuildingManager: MonoBehaviour{
 			stonemasonLevel.text = "Level: " + Buildings [STONEMASON_INDEX].Level.ToString ();
 			cost = Mathf.CeilToInt (Buildings [STONEMASON_INDEX].Level * Buildings [STONEMASON_INDEX].CostModifier).ToString();
 			stonemasonCost.text = "Cost to Build: " + cost + " Wood and " + cost + " Stone";
+			GameControl.control.villageData.lvl_building4 = Buildings [STONEMASON_INDEX].Level;
 			gameManager.resources.updateAllDisplays();
 		}
 	}
@@ -110,6 +114,7 @@ public class BuildingManager: MonoBehaviour{
 			houseLevel.text = "Level: " + Buildings[HOUSE_INDEX].Level.ToString();
 			cost = Mathf.CeilToInt (Buildings [STONEMASON_INDEX].Level * Buildings [STONEMASON_INDEX].CostModifier).ToString();
 			houseCost.text = "Cost to Build: " + cost + " Wood and " + cost + " Stone";
+			GameControl.control.villageData.lvl_building5 = Buildings [HOUSE_INDEX].Level;
 			gameManager.resources.updateAllDisplays();
 		}
 	}

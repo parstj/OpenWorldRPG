@@ -7,7 +7,16 @@ public class GameManager : MonoBehaviour {
 	public int Turns { get; set; }
 	public BuildingManager buildingManager;
 	public ResourceManager resources;
-	
+
+	void Awake () {
+		if (control == null) {
+			DontDestroyOnLoad (gameObject);
+			control = this;
+		} else if(control != this){
+			Destroy(gameObject);
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 	}

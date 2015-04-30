@@ -28,6 +28,14 @@ public class ResourceManager: MonoBehaviour {
 		updateStoneDisplay ();
 		updateCurrentPopDisplay ();
 		updateMaxPopDisplay ();
+
+		GameControl.control.villageData.gold = Gold;
+		GameControl.control.villageData.food = Food;
+		GameControl.control.villageData.water = Water;
+		GameControl.control.villageData.wood = Wood;
+		GameControl.control.villageData.stone = Stone;
+		GameControl.control.villageData.cur_population = CurrentPop;
+		GameControl.control.villageData.max_population = MaxPop;
 	}
 	
 	private void updateGoldDisplay(){
