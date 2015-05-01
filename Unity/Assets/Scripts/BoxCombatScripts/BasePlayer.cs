@@ -4,6 +4,8 @@ using System.Collections;
 public class BasePlayer : MonoBehaviour {
 	public string PlayerName;
 
+	public GameObject enemy1;
+	public GameObject enemy2;
 	private static int health;
 	private static int energy;
 	private static Attack attack1 = new Attack("Hit", 2, 5, 2); 
@@ -74,6 +76,19 @@ public class BasePlayer : MonoBehaviour {
 		}
 	}*/
 
+
+	void Awake(){
+		if (GameControl.control.openWorldData.enemyType == 1) {
+			enemy1.SetActive (true);
+			enemy2.SetActive (false);
+		} else if (GameControl.control.openWorldData.enemyType == 2) {
+			enemy2.SetActive (true);
+			enemy1.SetActive (false);
+		} else {
+
+		}
+
+	}
 
 
 	// Use this for initialization

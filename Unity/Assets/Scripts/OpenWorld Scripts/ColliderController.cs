@@ -25,6 +25,7 @@ public class ColliderController: MonoBehaviour {
 				Application.LoadLevel ("Village Management");
 			}
 		} else if (other.gameObject.tag == "EnemyTag") {
+			GameControl.control.openWorldData.enemyType = 1;
 			Debug.Log (other.name);
 			OpenWorldController.mySave (1, 0, 0);
 
@@ -93,6 +94,7 @@ public class ColliderController: MonoBehaviour {
 			neutralPanel1.SetActive (true);
 
 		} else {
+			GameControl.control.openWorldData.enemyType = 2;
 			OpenWorldController.mySave (0, 0, 1);
 			if (Application.CanStreamedLevelBeLoaded ("BoxCombat")) {
 				GameControl.control.PlayBgm3();

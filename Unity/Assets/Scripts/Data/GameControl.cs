@@ -116,6 +116,7 @@ public class GameControl : MonoBehaviour {
 		openWorldData.playerPosX = 8.0F;
 		openWorldData.playerPosY = 2.0F;
 		openWorldData.playerPosZ = 9.0F;
+		openWorldData.enemyType = 0;
 		openWorldData.enemy1.isDead = 0;
 		openWorldData.enemy1.isPlayerInSight = false;
 		openWorldData.enemy1.posX = 26.0F;
@@ -185,6 +186,7 @@ public class OpenWorldData{
 	public float playerPosX;
 	public float playerPosY;
 	public float playerPosZ;
+	public int enemyType;
 	public EnemyData enemy1 = new EnemyData();
 	public MissionData mission1 = new MissionData ();
 	public NeutralData neutral1 = new NeutralData ();
