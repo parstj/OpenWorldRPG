@@ -15,6 +15,8 @@ public class GameControl : MonoBehaviour {
 
 	public AudioSource bgm1;
 	public AudioSource bgm2;
+	public AudioSource bgm3;
+	public AudioSource bgm4;
 
 	void Awake () {
 		if (control == null) {
@@ -28,14 +30,42 @@ public class GameControl : MonoBehaviour {
 	public void PlayBgm1(){
 		if(bgm2.isPlaying)
 			bgm2.Stop ();
+		if (bgm3.isPlaying)
+			bgm3.Stop ();
+		if (bgm4.isPlaying)
+			bgm4.Stop ();
 		if(!bgm1.isPlaying)
 			bgm1.Play ();
 	}
 	public void PlayBgm2(){
 		if(bgm1.isPlaying)
 			bgm1.Stop ();
+		if (bgm3.isPlaying)
+			bgm3.Stop ();
+		if (bgm4.isPlaying)
+			bgm4.Stop ();
 		if(!bgm2.isPlaying)
 			bgm2.Play ();
+	}
+	public void PlayBgm3(){
+		if(bgm1.isPlaying)
+			bgm1.Stop ();
+		if (bgm2.isPlaying)
+			bgm2.Stop ();
+		if (bgm4.isPlaying)
+			bgm4.Stop ();
+		if(!bgm3.isPlaying)
+			bgm3.Play ();
+	}
+	public void PlayBgm4(){
+		if(bgm1.isPlaying)
+			bgm1.Stop ();
+		if (bgm2.isPlaying)
+			bgm2.Stop ();
+		if (bgm3.isPlaying)
+			bgm3.Stop ();
+		if(!bgm4.isPlaying)
+			bgm4.Play ();
 	}
 
 	public void Save(){
